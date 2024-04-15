@@ -1,0 +1,164 @@
+---
+title: 'Pengurus Komunitas'
+currentUrl: 'pengurus'
+group: 'komunitas'
+---
+extends layouts/layout
+block header
+  include partials/header
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                .text-center 
+                  h5.mb-0 Pengurus
+            .card.rounded-3.border-0
+              .card-body.p-5
+                div 
+                  p Filter Pencarian
+                  .row.gy-5
+                    .col-6
+                      div 
+                        input#search.form-control(type="text", name="seacrh", placeholder="search for community")
+                    .col-6 
+                      div
+                        select#kategori.select.wide(name="kategori")
+                          option(value="") Pilih Kategori
+                          option(value="1") Sekolah/kampus/alumni
+                          option(value="2") Perumahan
+                          option(value="3") Keluarga
+                          option(value="4") Wirausaha/bisnis
+                          option(value="5") Hoby
+                          option(value="6") Asosiasi/perkumpulan profit
+                          option(value="7") Asosiasi/perkumpulan non profit
+                    .col 
+                      div 
+                        select#provinsi.select.wide(name="provinsi")
+                          option(value="") Pilih Provinsi
+                          option(value="1") DKI JAKARTA
+                          option(value="2") JAWA BARAT
+                          option(value="3") JAWA TIMUR
+                          option(value="4") JAWA TENGAH
+                          option(value="5") KALIMANTAN SELATAN
+                          option(value="6") KALIMANTAN TIMUR
+                          option(value="7") SULAWESI
+                    .col 
+                      div 
+                        select#kota.select.wide(name="kota")
+                          option(value="") Kota/Kabupaten
+                          option(value="1") Jakarta Selatan
+                          option(value="2") Jakarta Timur
+                          option(value="3") Jakarta Barat
+                          option(value="4") Jakarta Pusat
+                    .col 
+                      div 
+                        select#kecamatan.select.wide(name="kecamatan")
+                          option(value="") Kecamatan
+                          option(value="1") Jakarta Selatan
+                          option(value="2") Jakarta Timur
+                          option(value="3") Jakarta Barat
+                          option(value="4") Jakarta Pusat
+                    .col 
+                      div 
+                        select#kelurahan.select.wide(name="kelurahan")
+                          option(value="") Kelurahan
+                          option(value="1") Jakarta Selatan
+                          option(value="2") Jakarta Timur
+                          option(value="3") Jakarta Barat
+                          option(value="4") Jakarta Pusat
+                    .col-auto
+                      div 
+                        button.btn.btn-primary.text-uppercase(type="button") cari
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.flex-column.gap-5 
+                  .text-end 
+                    button.btn.btn-outline-primary.text-uppercase(type="button") edit 
+                    a.btn.btn-primary.text-uppercase.ms-3(type="button" href="/pengurus-tambah.html")
+                      i.bi.bi-plus-lg
+                      span.ms-4 tambah pengurus
+                  .bg-light 
+                    iframe(frameborder='0' height='250' width='auto' style='width: 100%;' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?width=320&height=320&hl=en&q=-6.1754083,106.824584&t=&z=14&ie=UTF8&iwloc=B&output=embed')
+                  hr.my-0
+                  .d-flex.flex-column.gap-4 
+                    h6 Pengurus Inti 
+                    hr.my-0
+                    .row 
+                      .col-auto
+                        div
+                          label.form-label(for="") Ketua 
+                          .card 
+                            .card-body 
+                              .d-flex.gap-5.align-items-center
+                                .img-size-64.rounded-3
+                                  img.object-fit-cover.w-100.h-100.rounded-3(src="/img/contents/profile.jpeg", alt="Alex Thomas")
+                                div
+                                  h6.mb-1 Alex Thomas 
+                                  p.text-secondary.mb-0
+                                    small Alumni Sekolah Perizinan Batch 1
+                                  p.text-secondary.mb-0 
+                                    small Jakarta 
+                                    small.ms-2
+                                      a.link-info(href="/") Contact Info
+                      .col
+                    .row 
+                      .col-auto
+                        div
+                          label.form-label(for="") Sekretaris 
+                          .card 
+                            .card-body 
+                              .d-flex.gap-5.align-items-center
+                                .img-size-64.rounded-3
+                                  img.object-fit-cover.w-100.h-100.rounded-3(src="/img/contents/profile.jpeg", alt="Alex Thomas")
+                                div
+                                  h6.mb-1 Alex Thomas 
+                                  p.text-secondary.mb-0
+                                    small Alumni Sekolah Perizinan Batch 1
+                                  p.text-secondary.mb-0 
+                                    small Jakarta 
+                                    small.ms-2
+                                      a.link-info(href="/") Contact Info
+                      .col-auto
+                        div
+                          label.form-label(for="") Bendahara 
+                          .card 
+                            .card-body 
+                              .d-flex.gap-5.align-items-center
+                                .img-size-64.rounded-3
+                                  img.object-fit-cover.w-100.h-100.rounded-3(src="/img/contents/profile.jpeg", alt="Alex Thomas")
+                                div
+                                  h6.mb-1 Alex Thomas 
+                                  p.text-secondary.mb-0
+                                    small Alumni Sekolah Perizinan Batch 1
+                                  p.text-secondary.mb-0 
+                                    small Jakarta 
+                                    small.ms-2
+                                      a.link-info(href="/") Contact Info
+                  .d-flex.flex-column.gap-4 
+                    h6 Pengurus Bidang 
+                    hr.my-0
+                    .row 
+                      .col-auto
+                        div
+                          label.form-label(for="") Bidang Ekonomi 
+                          .card 
+                            .card-body 
+                              .d-flex.gap-5.align-items-center
+                                .img-size-64.rounded-3
+                                  img.object-fit-cover.w-100.h-100.rounded-3(src="/img/contents/profile.jpeg", alt="Alex Thomas")
+                                div
+                                  h6.mb-1 Alex Thomas 
+                                  p.text-secondary.mb-0
+                                    small Alumni Sekolah Perizinan Batch 1
+                                  p.text-secondary.mb-0 
+                                    small Jakarta 
+                                    small.ms-2
+                                      a.link-info(href="/") Contact Info
+block footer 
+  include partials/footer

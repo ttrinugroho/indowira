@@ -1,0 +1,113 @@
+---
+title: 'Detail Usaha Anggota Komunitas'
+currentUrl: 'laporan-usaha-detail'
+group: 'komunitas'
+---
+extends layouts/layout
+block header
+  include partials/header
+block footer 
+  include partials/footer
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                +btnback(title)
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.flex-column.gap-5
+                  .d-flex.align-items-center.justify-content-between 
+                    .d-flex.gap-4.align-items-center
+                      img.rounded-circle.object-fit-cover(src="/img/contents/bakso-aci.jpeg", alt="", height="40", width="40")
+                      div 
+                        h6.fw-normal Bakso Aci
+                        div 
+                          i.bi.bi-pin-fill.text-secondary(style="font-size: 10px;")
+                          span.badge.fw-normal.text-secondary Jl. Darmajaya, Jakarta Timur
+                    div 
+                      button.btn.btn-success.text-uppercase(type="button")
+                        i.bi.bi-whatsapp 
+                        span.ms-2 Hubungi kami
+                  hr.my-0
+                  h5.fw-normal.mb-0 Produk 
+                  .row.row-cols-3.g-4
+                    each produk in [1,2,3]
+                      .col 
+                        .card
+                          .card-body
+                            .mb-2 
+                              img.rounded-2.object-fit-cover.w-100(src="/img/contents/bakso-aci.jpeg", alt="bakso aci", width="259" height="197")
+                            .p-2 
+                              h6.small Bakso Aci
+                              h6.text-primary Rp 25.000
+                  hr.my-0
+                  h5.fw-normal.mb-0 Detail Usaha Anda
+                  div 
+                    label.form-label.text-secondary(for="") Level Usaha
+                    div 
+                      span.badge.p-0.text-primary.me-2 Level 0
+                      span.badge.text-primary.bg-primary-subtle.rounded-pill Baru memulai usaha
+                  .row.row-cols-2.gy-5 
+                    .col
+                      div 
+                        label.form-label.text-secondary(for="") Berdiri Sejak
+                        p.mb-0 01/01/2020
+                    .col
+                      div 
+                        label.form-label.text-secondary(for="") Lokasi
+                        p.mb-0 Jl. Darmajaya, Jakarta Timur
+                    .col
+                      div 
+                        label.form-label.text-secondary(for="") Kategori Usaha
+                        p.mb-0 Food and Beverages
+                    .col
+                      div 
+                        label.form-label.text-secondary(for="") Kategori Reseller
+                        p.mb-0 Open Reseller
+                    .col
+                      div 
+                        label.form-label.text-secondary(for="") Jumlah Pegawai
+                        p.mb-0 15 Orang
+                    .col
+                      div 
+                        label.form-label.text-secondary(for="") Omzet Usaha
+                        p.mb-0 Rp 8.000.000/bulan
+                  div 
+                    label.form-label.text-secondary(for="") Deskripsi Usaha
+                    p.mb-0 Lorem ipsum dolor sit amet consectetur. Id faucibus aliquet lacus in augue imperdiet nisl odio. Duis massa amet vulputate non non tristique in morbi. Posuere vitae tempus aliquam sit curabitur purus ullamcorper nunc. Sed elit libero lacus posuere lobortis. Lorem ipsum dolor sit amet consectetur. Id faucibus aliquet lacus in augue imperdiet nisl odio. Duis massa amet vulputate non non tristique in morbi. Posuere vitae tempus aliquam sit curabitur purus ullamcorper nunc. Sed elit libero lacus posuere lobortis.Lorem ipsum dolor sit amet consectetur. Id faucibus aliquet lacus in augue imperdiet nisl odio. Duis massa amet vulputate non non tristique in morbi. Posuere vitae tempus aliquam sit curabitur purus ullamcorper nunc. Sed elit libero lacus posuere lobortis.
+                  div 
+                    iframe(frameborder='0' height='250' width='auto' style='width: 100%;' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?width=320&height=320&hl=en&q=-6.1754083,106.824584&t=&z=14&ie=UTF8&iwloc=B&output=embed')
+                  div 
+                    label.form-label.text-secondary(for="") Komunitas yang diikuti
+                    .row.row-cols-5
+                      .col 
+                        .card
+                          .card-body
+                            .mb-4
+                              img.rounded-2.object-fit-cover.w-100(src="/img/contents/asik-masak.jpeg", alt="bakso aci", width="120" height="120")
+                            .text-center
+                              span.badge.rounded-0.fw-normal.bg-info-subtle.text-info FnB
+                              h6.mt-2 Asik Masak
+                      .col 
+                        .card
+                          .card-body
+                            .mb-4
+                              img.rounded-2.object-fit-cover.w-100(src="/img/contents/bibit-go.jpeg", alt="bakso aci", width="120" height="120")
+                            .text-center
+                              span.badge.rounded-0.fw-normal.bg-info-subtle.text-info Tanaman
+                              h6.mt-2 Bibit Go
+                      .col 
+                        .card
+                          .card-body
+                            .mb-4
+                              img.rounded-2.object-fit-cover.w-100(src="/img/contents/anak-design.jpeg", alt="bakso aci", width="120" height="120")
+                            .text-center
+                              span.badge.rounded-0.fw-normal.bg-info-subtle.text-info Designer
+                              h6.mt-2 Anak Design
+
+        .col-3
+          include partials/side-plan

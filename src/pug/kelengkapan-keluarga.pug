@@ -1,0 +1,49 @@
+---
+title: 'Kelengkapan Profil Member Komunitas'
+currentUrl: 'kelengkapan-hobby'
+group: 'komunitas'
+---
+extends layouts/layout
+block header
+  include partials/header
+block footer 
+  include partials/footer
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                +btnback(title)
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                .text-center
+                  h6.small.mb-0 KATEGORI SEKOLAH/KAMPUS ALUMNI 
+
+            .card.rounded-3.border-0
+              .card-body.p-5 
+                .d-flex.flex-column.gap-5 
+                  .text-end 
+                    button.btn.btn-secondary(type="button") Cancel 
+                    button.btn.btn-primary.ms-3(type="button") Simpan
+                  hr.my-0
+                  div 
+                    label.form-label.small(for="generasi") Generasi Ke
+                    select#generasi.select.wide(name="generasi")
+                      option(value="") Pilih Generasi
+                      option(value="1") Generasi Teknik
+                      option(value="2") Generasi KEdokteran
+                      option(value="3") FISIP
+                      option(value="4") STKIP
+                  div 
+                    label.form-label.small(for="urutan") Anak Urutan Ke
+                    select#urutan.select.wide(name="urutan")
+                      option(value="") Pilih Urutan Anak Ke
+                      option(value="1") 1
+                      option(value="2") 2
+                      option(value="3") 3
+                      option(value="4") 4

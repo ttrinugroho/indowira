@@ -1,0 +1,142 @@
+---
+title: 'Detail Komunitas'
+currentUrl: 'komunitas-detail'
+group: 'komunitas'
+---
+extends layouts/layout
+block header
+  include partials/header
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                +btnback('Komunitas')
+            .card.rounded-3.border-0
+              .card-body.p-5 
+                .d-flex.flex-column.gap-5 
+                  .d-flex.justify-content-between 
+                    .d-flex.gap-4 
+                      .rounded-3(style="width: 120px; height: 120px;")
+                        img.rounded-3.object-fit-cover.w-100.h-100(src="/img/contents/logo-komunitas.jpeg", alt="Logo Komunitas")
+                      div
+                        .mb-2
+                          span.px-3.me-2.badge.bg-info-subtle.text-info Terbuka 
+                          span.px-3.badge.bg-secondary-subtle.text-secondary Hobby
+                        h5.fw-semibold Komunitas Sepedaan
+                        .mb-2 
+                          small.text-secondary Biaya membership
+                          span.text-primary.medium.ms-2 Rp 25.000/bulan
+                        p.text-secondary.mb-0
+                          sup Jumlah member saat ini 45 orang
+                    div 
+                      button.btn.btn-primary.text-uppercase(type="button") ikut komunitas 
+                      button.btn.btn-outline-primary.text-uppercase.ms-2(type="button") share
+                  hr.my-0
+                  .row.row-cols-2.gy-5
+                    .col 
+                      div 
+                        label.form-label.fw-medium(for="") Tagline
+                        p.text-secondary.mb-0 Indowira Komunitas Sejahtera
+                    .col 
+                    .col 
+                      div 
+                        label.form-label.fw-medium(for="") Founder
+                        p.text-secondary.mb-0 Rahmad Hadiyanto
+                    .col 
+                      div 
+                        label.form-label.fw-medium(for="") Berdiri
+                        p.text-secondary.mb-0 23 Agustus 2022
+                    .col 
+                      div 
+                        label.form-label.fw-medium(for="") Website
+                        p.text-secondary.mb-0 www.komunitassepedaan.co.id
+                    .col 
+                      div 
+                        label.form-label.fw-medium(for="") Admin
+                        p.text-secondary.mb-0 Saya, Cahya, Bintang
+                  hr.my-0
+                  .row.row-cols-2.gy-5
+                    .col 
+                      div 
+                        label.form-label.fw-medium(for="") Legalitas
+                        p.text-secondary.mb-0 Yayasan
+                    .col 
+                      div 
+                        label.form-label.fw-medium(for="") Nomor Akta pendirian / perubahan yg terbaru
+                        p.text-secondary.mb-0 1239 34285 13194
+                    .col 
+                      .row.row-cols-2 
+                        .col 
+                          div 
+                            label.form-label.fw-medium(for="") Nama Rekening
+                            p.text-secondary.mb-0 Hery Kurnaidi
+                        .col 
+                          div 
+                            label.form-label.fw-medium(for="") Nama Bank
+                            p.text-secondary.mb-0 BRI
+                    .col 
+                      div 
+                        label.form-label.fw-medium(for="") Nomor Rekening
+                        p.text-secondary.mb-0 1239 34285 13194
+                    .col-12 
+                      div 
+                        label.form-label.fw-medium(for="") Aturan Komunitas
+                        p.text-secondary.mb-0 Lorem ipsum dolor sit amet consectetur. Ornare massa et ultrices dictum quis orci et. At quam amet aliquet at. Urna consequat sagittis tellus mauris risus a. Dictum justo mi felis aenean purus. Ut ut amet auctor ac. Ornare aliquam scelerisque arcu massa nec nisl sed. Vitae duis netus ac lorem ornare at aenean bibendum.
+                  hr.my-0
+                  .row.row-cols-2.gy-4 
+                    .col-12
+                      div
+                        label.form-label.fw-medium(for="") Media Sosial
+                    .col 
+                      i.bi.bi-facebook 
+                      span.text-secondary.ms-2 komunitassepedaan/facebook.com
+                    .col 
+                      i.bi.bi-instagram 
+                      span.text-secondary.ms-2 komunitassepedaan/instagram.com
+                    .col 
+                      i.bi.bi-tiktok 
+                      span.text-secondary.ms-2 komunitassepedaan/tiktok.com
+                    .col 
+                      i.bi.bi-youtube 
+                      span.text-secondary.ms-2 komunitassepedaan/youtube.com
+                    .col 
+                      i.bi.bi-telegram 
+                      span.text-secondary.ms-2 komunitassepedaan/telegram.com
+                    .col 
+                      i.bi.bi-linkedin 
+                      span.text-secondary.ms-2 komunitassepedaan/linkedin.com
+                  .row.row-cols-2.gy-4 
+                    .col-12
+                      div
+                        label.form-label.fw-medium(for="") Kontak
+                    .col 
+                      i.bi.bi-envelope 
+                      span.text-secondary.ms-2 komunitassepedaan@gmail.com
+                    .col 
+                      i.bi.bi-whatsapp
+                      span.text-secondary.ms-2 wa.me/6283813491234
+                  hr.my-0
+                  div
+                    label.form-label.fw-medium(for="") Deskripsi
+                    p.text-secondary.mb-0 Lorem ipsum dolor sit amet consectetur. Ornare massa et ultrices dictum quis orci et. At quam amet aliquet at. Urna consequat sagittis tellus mauris risus a. Dictum justo mi felis aenean purus. Ut ut amet auctor ac. Ornare aliquam scelerisque arcu massa nec nisl sed. Vitae duis netus ac lorem ornare at aenean bibendum. Enim laoreet dapibus amet eu. Dis interdum fames aenean vulputate a pharetra ipsum at non. Metus ut sed sagittis pulvinar netus ut ultrices. Penatibus in sit proin dictum pharetra sem sollicitudin.
+                  .row.row-cols-2
+                    .col 
+                      div
+                        label.form-label.fw-medium(for="") Visi
+                        p.text-secondary.mb-0 Lorem ipsum dolor sit amet consectetur. Ornare massa et ultrices dictum quis orci et. At quam amet aliquet at. Urna consequat sagittis tellus mauris risus a. Dictum justo mi felis aenean purus. Ut ut amet auctor ac. Ornare aliquam scelerisque arcu massa nec nisl sed. Vitae duis netus ac lorem ornare at aenean bibendum. 
+                    .col 
+                      div
+                        label.form-label.fw-medium(for="") Misi
+                        p.text-secondary.mb-0 Lorem ipsum dolor sit amet consectetur. Ornare massa et ultrices dictum quis orci et. At quam amet aliquet at. Urna consequat sagittis tellus mauris risus a. Dictum justo mi felis aenean purus. Ut ut amet auctor ac. Ornare aliquam scelerisque arcu massa nec nisl sed. Vitae duis netus ac lorem ornare at aenean bibendum.
+                  hr.my-0
+                  .text-end 
+                    button.btn.btn-outline-primary.text-uppercase(type="button") lihat member 
+                    button.btn.btn-outline-primary.text-uppercase.ms-4(type="button") lihat pengurus
+block footer
+  include partials/footer

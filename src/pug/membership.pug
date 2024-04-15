@@ -1,0 +1,45 @@
+---
+title: 'Membership'
+currentUrl: 'membership'
+group: 'komunitas'
+---
+extends layouts/layout
+block header
+  include partials/header
+block footer 
+  include partials/footer
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                +btnback(title)
+             
+            .card.rounded-3.border-0
+              .card-body.p-5 
+                .d-flex.flex-column.gap-5
+                  .row.row-cols-2.g-4 
+                    .col 
+                      div 
+                        label.form-label.small(for="tahun") Tahun
+                        input.form-control#tahun(type="text" placeholder="Tulis tahun")
+                    .col
+                      div 
+                        label.form-label.small(for="bulan") Bulan
+                        select#bulan.select.wide(name="bulan")
+                          option(value="") Bulan
+                          option(value="jan") Januari
+                          option(value="feb") Februari
+                    .col
+                      div 
+                        label.form-label.small(for="iuran") Jumlah Iuran
+                        input.form-control#iuran(type="text" placeholder="Tulis iuran")
+                      div 
+                        span.fw-normal.badge.text-primary *jumlah iuran penetapan komunitas setiap anggota minimal Rp 50.000,-
+                  .text-end
+                    button.btn.btn-primary.text-uppercase(type="button") Lakukan Pembayaran

@@ -1,0 +1,61 @@
+---
+title: 'Laporan Pengurus, Anggota dan Iuran Komunitas'
+currentUrl: 'laporan-pengurus'
+group: 'komunitas'
+---
+extends layouts/layout
+block header
+  include partials/header
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                +btnback(title)
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.align-items-center.justify-content-between.mb-4 
+                  p.small.mb-0 Berikut ini adalah daftar Pengurus, Member dan Iuran Keanggotaan Komunitas Anda:
+                  div 
+                    button.btn.btn-primary.text-uppercase(type="button") download pdf
+                div 
+                  table.table.table-bordered
+                    thead.fw-medium.table-secondary.small
+                      tr 
+                        td.text-center(colspan="2") NAMA ANGGOTA
+                        td(colspan="4") BIO DATA 
+                      tr
+                        td Jabatan 
+                        td Nama
+                        td Email 
+                        td No WA 
+                        td Sosial Media
+                        td Pekerjaan
+                    tbody
+                      tr.table-light
+                        td.fw-medium(colspan="6") Pengurus Bidang
+                      each user in [1,2,3,4,5,6]
+                        tr.small
+                          td Ketua 
+                          td Ahmad
+                          td ahmad@gmail.com
+                          td 08123456789
+                          td 
+                          td Digital Marketer
+                      tr.table-light
+                        td.fw-medium(colspan="6") Anggota 
+                      each user in [1,2,3,4,5,6]
+                        tr.small
+                          td Ketua 
+                          td Ahmad
+                          td ahmad@gmail.com
+                          td 08123456789
+                          td 
+                          td Digital Marketer
+block footer 
+  include partials/footer

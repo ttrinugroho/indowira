@@ -1,0 +1,220 @@
+---
+title: 'Feed'
+currentUrl: feed
+---
+extends layouts/layout
+block header
+  include partials/header
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-6
+          .d-flex.flex-column.gap-4 
+            .card.rounded-4.border-0
+              .card-body.p-5
+                .d-flex.gap-5
+                  div
+                    img.rounded-circle.object-fit-cover.d-block(src="/img/contents/profile.jpeg",width="66", height="66", alt="Profile", style="width:66px;height:66px")
+                  .w-100 
+                    .mb-4
+                      textarea.form-control.p-4(id='' placeholder='Start post ...' rows='4')
+                    .d-flex.justify-content-between.align-items-center
+                      .d-flex.align-items-center.gap-7.text-secondary
+                        div
+                          svg(width='24' height='24' viewbox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(fill-rule='evenodd' clip-rule='evenodd' d='M18.1362 5.86369C16.5882 4.31562 14.0783 4.31562 12.5302 5.86369L10.8635 7.53036C10.5706 7.82326 10.0957 7.82326 9.80285 7.53036C9.50996 7.23747 9.50996 6.7626 9.80285 6.4697L11.4695 4.80303C13.6034 2.66917 17.063 2.66917 19.1969 4.80303C21.3308 6.93688 21.3308 10.3965 19.1969 12.5304L17.5302 14.1971C17.2373 14.49 16.7625 14.49 16.4696 14.1971C16.1767 13.9042 16.1767 13.4293 16.4696 13.1364L18.1362 11.4697C19.6843 9.92167 19.6843 7.41175 18.1362 5.86369ZM14.6516 9.34833C14.9445 9.64123 14.9445 10.1161 14.6516 10.409L10.409 14.6516C10.1161 14.9445 9.64122 14.9445 9.34833 14.6516C9.05544 14.3587 9.05544 13.8839 9.34833 13.591L13.591 9.34833C13.8839 9.05544 14.3587 9.05544 14.6516 9.34833ZM11.4695 18.1363C9.92142 19.6844 7.41151 19.6844 5.86344 18.1363C4.31538 16.5883 4.31538 14.0784 5.86344 12.5303L7.53012 10.8636C7.82301 10.5707 7.82301 10.0958 7.53012 9.80295C7.23723 9.51006 6.76235 9.51006 6.46946 9.80295L4.80278 11.4696C2.66893 13.6035 2.66893 17.0631 4.80278 19.197C6.93664 21.3309 10.3963 21.3308 12.5302 19.197L14.1968 17.5303C14.4897 17.2374 14.4897 16.7626 14.1968 16.4697C13.9039 16.1768 13.4291 16.1768 13.1362 16.4697L11.4695 18.1363Z' fill='currentColor')
+                        div 
+                          svg(width='24' height='24' viewbox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(d='M22 14L19.061 11.8839C17.5338 10.7843 15.4467 10.898 14.0479 12.1569L9.95209 15.8431C8.55331 17.102 6.4662 17.2157 4.93901 16.1161L2 14M6 22H18C20.2091 22 22 20.2091 22 18V6C22 3.79086 20.2091 2 18 2H6C3.79086 2 2 3.79086 2 6V18C2 20.2091 3.79086 22 6 22ZM11 8.5C11 9.88071 9.88071 11 8.5 11C7.11929 11 6 9.88071 6 8.5C6 7.11929 7.11929 6 8.5 6C9.88071 6 11 7.11929 11 8.5Z' stroke='currentColor' stroke-width='1.5' stroke-linecap='round')
+                        div
+                          svg(width='24' height='24' viewbox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(d='M20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12ZM22 12C22 14.6522 20.9464 17.1957 19.0711 19.0711C17.1957 20.9464 14.6522 22 12 22C10.6868 22 9.38642 21.7413 8.17317 21.2388C6.95991 20.7362 5.85752 19.9997 4.92893 19.0711C3.05357 17.1957 2 14.6522 2 12C2 9.34784 3.05357 6.8043 4.92893 4.92893C6.8043 3.05357 9.34784 2 12 2C13.3132 2 14.6136 2.25866 15.8268 2.7612C17.0401 3.26375 18.1425 4.00035 19.0711 4.92893C19.9997 5.85752 20.7362 6.95991 21.2388 8.17317C21.7413 9.38642 22 10.6868 22 12ZM10 9.5C10 10.3 9.3 11 8.5 11C7.7 11 7 10.3 7 9.5C7 8.7 7.7 8 8.5 8C9.3 8 10 8.7 10 9.5ZM17 9.5C17 10.3 16.3 11 15.5 11C14.7 11 14 10.3 14 9.5C14 8.7 14.7 8 15.5 8C16.3 8 17 8.7 17 9.5ZM12 17.23C10.25 17.23 8.71 16.5 7.81 15.42L9.23 14C9.68 14.72 10.75 15.23 12 15.23C13.25 15.23 14.32 14.72 14.77 14L16.19 15.42C15.29 16.5 13.75 17.23 12 17.23Z' fill='currentColor')
+                        div 
+                          svg(width='24' height='24' viewbox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg')
+                            path(fill-rule='evenodd' clip-rule='evenodd' d='M10.8031 4.13625C12.5688 2.3706 15.4315 2.3706 17.1971 4.13625C18.9628 5.9019 18.9628 8.76459 17.1971 10.5302L11.8638 15.8636C10.8345 16.8929 9.16573 16.8929 8.13646 15.8636C7.10718 14.8343 7.10718 13.1655 8.13646 12.1363L13.4698 6.80292C13.7627 6.51003 14.2376 6.51003 14.5305 6.80292C14.8233 7.09581 14.8233 7.57069 14.5305 7.86358L9.19712 13.1969C8.75363 13.6404 8.75363 14.3594 9.19712 14.8029C9.6406 15.2464 10.3596 15.2464 10.8031 14.8029L16.1365 9.46959C17.3163 8.28972 17.3163 6.37678 16.1365 5.19691C14.9566 4.01704 13.0436 4.01705 11.8638 5.19691L6.53045 10.5302C4.6142 12.4465 4.6142 15.5533 6.53045 17.4696C8.44669 19.3858 11.5535 19.3858 13.4698 17.4696L18.8031 12.1363C19.096 11.8434 19.5709 11.8434 19.8638 12.1363C20.1567 12.4291 20.1567 12.904 19.8638 13.1969L14.5305 18.5302C12.0284 21.0323 7.97182 21.0323 5.46979 18.5303C2.96776 16.0282 2.96775 11.9716 5.46978 9.46959L10.8031 4.13625Z' fill='currentColor')
+                      div 
+                        button.btn.btn-danger.py-2.text-uppercase(type="button") Post
+                hr.my-5
+                div
+                  ul.nav.nav-pills.nav-fill
+                    li.nav-item
+                      a.nav-link.px-2(href='#')
+                        svg(xmlns='http://www.w3.org/2000/svg' width='20' height='21' viewbox='0 0 20 21' fill='none')
+                          path(d='M6.66663 2.1665V4.6665' stroke='#4D7CFE' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                          path(d='M13.3334 2.1665V4.6665' stroke='#4D7CFE' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                          path(d='M2.5 7.41651C2.5 5.20737 4.29086 3.4165 6.5 3.4165H13.5C15.7091 3.4165 17.5 5.20737 17.5 7.4165V14.8332C17.5 17.0423 15.7091 18.8332 13.5 18.8332H6.5C4.29086 18.8332 2.5 17.0423 2.5 14.8332V7.41651Z' stroke='#4D7CFE' stroke-width='1.5')
+                          path(d='M7.5 13.0002L8.83615 14.0691C9.25403 14.4034 9.86103 14.3495 10.2134 13.9467L12.5 11.3335' stroke='#4D7CFE' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                          path(d='M2.5 8H17.5' stroke='#4D7CFE' stroke-width='1.5' stroke-linecap='round')
+                        small.text-secondary.ms-2 Event
+                    li.nav-item
+                      a.nav-link.px-2(href='#')
+                        svg(xmlns='http://www.w3.org/2000/svg' width='21' height='21' viewbox='0 0 21 21' fill='none')
+                          path(d='M6.91667 7.99984H10.25M6.91667 11.3332H13.5833M6.91667 14.6665H13.5833M13.5829 2.1665V4.6665M6.91626 2.1665V4.6665M6.08333 3.4165H14.4167C16.2576 3.4165 17.75 4.90889 17.75 6.74984V15.4998C17.75 17.3408 16.2576 18.8332 14.4167 18.8332H6.08333C4.24238 18.8332 2.75 17.3408 2.75 15.4998V6.74984C2.75 4.90889 4.24238 3.4165 6.08333 3.4165Z' stroke='#C00000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                        small.text-secondary.ms-2 Artikel
+                    li.nav-item
+                      a.nav-link.px-2(href='#')
+                        svg(xmlns='http://www.w3.org/2000/svg' width='21' height='21' viewbox='0 0 21 21' fill='none')
+                          path(d='M5.24914 16.2733L4.73205 15.9671C3.66025 15.3323 3 14.1593 3 12.8899V8.10977C3 6.84034 3.66025 5.66733 4.73205 5.03261L8.76795 2.64254C9.83975 2.00782 11.1603 2.00782 12.2321 2.64254L16.2679 5.03261C17.3397 5.66733 18 6.84034 18 8.10977V12.8899C18 14.1593 17.3397 15.3323 16.2679 15.9671L15.7509 16.2733M5.24914 16.2733L8.76795 18.3571C9.83975 18.9919 11.1603 18.9919 12.2321 18.3571L15.7509 16.2733M5.24914 16.2733C6.29739 14.415 8.25636 13.1648 10.5 13.1648C12.7437 13.1648 14.7026 14.415 15.7509 16.2733' stroke='#EC9733' stroke-width='1.5' stroke-linejoin='round')
+                          circle(cx='10.5' cy='8' r='2.5' transform='rotate(180 10.5 8)' stroke='#EC9733' stroke-width='1.5' stroke-linejoin='round')
+                        small.text-secondary.ms-2 Forum
+                    li.nav-item
+                      a.nav-link.px-2(href='#')
+                        svg(xmlns='http://www.w3.org/2000/svg' width='21' height='21' viewbox='0 0 21 21' fill='none')
+                          path(d='M14.0833 5.49984V4.6665C14.0833 3.28579 12.964 2.1665 11.5833 2.1665H9.91658C8.53587 2.1665 7.41658 3.28579 7.41658 4.6665V5.49984M15.7499 8.83317H5.74992M15.7499 12.1665H5.74992M15.7499 15.4998H5.74992M15.7499 18.8332H5.74992C3.90897 18.8332 2.41658 17.3408 2.41658 15.4998V8.83317C2.41658 6.99222 3.90897 5.49984 5.74992 5.49984H15.7499C17.5909 5.49984 19.0833 6.99222 19.0833 8.83317V15.4998C19.0833 17.3408 17.5909 18.8332 15.7499 18.8332Z' stroke='#6DD230' stroke-width='1.5' stroke-linecap='round')
+                        small.text-secondary.ms-2 Lowongan/Jobs
+                    li.nav-item
+                      a.nav-link.px-2(href='#')
+                        svg(xmlns='http://www.w3.org/2000/svg' width='20' height='21' viewbox='0 0 20 21' fill='none')
+                          path(d='M3.33325 18.8332H15.8333C17.214 18.8332 18.3333 17.7139 18.3333 16.3332V4.6665C18.3333 3.28579 17.214 2.1665 15.8333 2.1665H7.49992C6.11921 2.1665 4.99992 3.28579 4.99992 4.6665V7.1665M3.33325 18.8332C4.25373 18.8332 4.99992 18.087 4.99992 17.1665V7.1665M3.33325 18.8332C2.41278 18.8332 1.66658 18.087 1.66658 17.1665V8.83317C1.66658 7.9127 2.41278 7.1665 3.33325 7.1665H4.99992M14.9999 6.33317H8.33325M14.9999 10.4998H8.33325M14.9999 14.6665H11.6666' stroke='#D562D8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                        small.text-secondary.ms-2 Projects
+            .card.rounded-4.border-0
+              .card-body.p-5.d-flex.flex-column.gap-5
+                each data in [1,2,3]
+                  .card.rounded-3.shadow-sm
+                    .card-body.p-5
+                      .d-flex.flex-column.gap-5 
+                        .d-flex.align-items-center.justify-content-between 
+                          .d-flex.gap-4.align-items-center
+                            div
+                              img.rounded-circle.object-fit-cover.d-block(src="/img/contents/profile.jpeg",width="40", height="40", alt="Profile", style="width:40px;height:40px")
+                            div 
+                              h6.mb-0 Alex Thomas
+                              small.text-secondary 17 Apr 2018
+                          .dropdown
+                            a.btn.btn-sm(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+                              i.bi.bi-three-dots-vertical
+                            ul.dropdown-menu.dropdown-menu-end.rounded-0.p-0
+                              li.border-bottom
+                                a.dropdown-item.py-4(href='#')
+                                  i.bi.bi-bookmark
+                                  span.ms-2 Simpan
+                              li
+                                a.dropdown-item.py-4(href='#')
+                                  i.bi.bi-info-circle
+                                  span.ms-2 Laporkan
+                        div 
+                          h5 Posted new attachments
+                          p.text-secondary.small Sometimes this is the irony of promoting your businesses products and services, because for a fact that you want to make your business
+                          .row.row-cols-3.gx-5 
+                            .col
+                              .feed-image
+                                img.w-100.h-100.object-fit-fill(src="/img/contents/feed-image-1.png", alt="feed image")
+                            .col 
+                              .feed-image
+                                img.w-100.h-100.object-fit-fill(src="/img/contents/feed-image-2.jpeg", alt="feed image")
+                            .col 
+                              .feed-image.position-relative.fs-3.text-white
+                                .position-absolute.h-100.w-100.top-0.bg-black.bg-opacity-75.d-flex.align-items-center.justify-content-center.flex-column
+                                  span +
+                                  span 4
+                                img.w-100.h-100.object-fit-fill(src="/img/contents/feed-image-3.png", alt="feed image")
+                        ul.nav.nav-pills.nav-fill.border-top.border-bottom
+                          li.nav-item
+                            a.nav-link.link-dark(href='#')
+                              svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                path(d='M4.99996 6.66667H3.33329C2.41282 6.66667 1.66663 7.41286 1.66663 8.33333V15.8333C1.66663 16.7538 2.41282 17.5 3.33329 17.5H4.99996C5.92043 17.5 6.66663 16.7538 6.66663 15.8333V8.33333C6.66663 7.41286 5.92043 6.66667 4.99996 6.66667Z' stroke='#252631' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                                path(d='M13.2307 17.5H10.1759C9.5178 17.5 8.87444 17.3052 8.32688 16.9402L7.03771 16.0807C6.80588 15.9262 6.66663 15.666 6.66663 15.3873V8.55464C6.66663 8.40961 6.70447 8.2671 6.77642 8.14119L9.99996 2.5H11.1072C12.7712 2.5 13.7636 4.35447 12.8407 5.73896L11.6666 7.5H16.1987C17.283 7.5 18.0785 8.51898 17.8156 9.57089L16.4645 14.9751C16.0935 16.459 14.7603 17.5 13.2307 17.5Z' stroke='#252631' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                              span.ms-2 Like
+                          li.nav-item
+                            a.nav-link.link-dark(href='#')
+                              svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                path(d='M6.66675 8.33333H13.3334M6.66675 11.6667H10.0001M9.16675 2.5H10.8334C14.9756 2.5 18.3334 5.85786 18.3334 10C18.3334 14.1421 14.9756 17.5 10.8334 17.5H5.00008C3.15913 17.5 1.66675 16.0076 1.66675 14.1667V10C1.66675 5.85786 5.02461 2.5 9.16675 2.5Z' stroke='#252631' stroke-width='1.5' stroke-linecap='round')
+                              span.ms-2 Comment
+                          li.nav-item
+                            a.nav-link.link-dark(href='#')
+                              svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                path(d='M16.1579 2.5H3.84253C1.94952 2.5 0.962918 4.69624 2.24691 6.05195L4.82148 8.77034C5.19175 9.16129 5.39736 9.67382 5.39736 10.2059V15.3794C5.39736 17.3946 8.01354 18.2695 9.28292 16.6788L17.872 5.91578C18.9814 4.52559 17.9649 2.5 16.1579 2.5Z' stroke='#252631' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                              span.ms-2 Share
+        .col-3 
+          include partials/side-plan
+block footer
+  include partials/footer
+block modal 
+  +modal('modal-change-komunitas')
+    .modal-header.pt-7.px-7(style="--bs-modal-header-border-width: 0;")
+      h5.modal-title Ganti Komunitas
+      button.btn-close(type="button" data-bs-dismiss="modal" aria-label="Close")
+    .modal-body.px-7.pb-7
+      .d-flex.flex-column.gap-7
+        .d-flex.gap-4.align-items-center 
+          .position-relative.flex-grow-1
+            input.form-control.px-6(type="text")
+            .position-absolute.top-0.ps-3.py-2
+              span.bi.bi-search
+          div 
+            button.btn.btn-primary(type="button") Search
+        .d-flex.flex-column.gap-4 
+          .fw-medium Unggulan
+          .card 
+            .card-body 
+              .d-flex.gap-7.align-items-center 
+                .rounded-3.bg-success.text-white.img-size-64.position-relative
+                  img.rounded-3.object-fit-cover.w-100.h-100.position-relative(src="/img/contents/profile.jpeg", alt="Perumahan BSD")
+                div 
+                  p.mb-1 Perumahan BSD 
+                  small.text-secondary
+                    sup Oleh Jia
+                .ms-auto 
+                  button.btn.btn-primary(type="button") Pilih
+          .card 
+            .card-body 
+              .d-flex.gap-7.align-items-center 
+                .rounded-3.bg-success.text-white.img-size-64.position-relative
+                  .position-absolute.w-100.h-100.justify-content-center.align-items-center.d-flex.top-0.start-0
+                    span PB
+                div 
+                  p.mb-1 Perumahan BSD 
+                  small.text-secondary
+                    sup Oleh Jia
+                .ms-auto 
+                  button.btn.btn-primary(type="button") Pilih
+        .d-flex.flex-column.gap-4 
+          .fw-medium Passion
+          .card 
+            .card-body 
+              .d-flex.gap-7.align-items-center 
+                .rounded-3.bg-success.text-white.img-size-64.position-relative
+                  img.rounded-3.object-fit-cover.w-100.h-100.position-relative(src="/img/contents/profile.jpeg", alt="Perumahan BSD")
+                div 
+                  p.mb-1 Perumahan BSD 
+                  small.text-secondary
+                    sup Oleh Jia
+                .ms-auto 
+                  button.btn.btn-primary(type="button" data-bs-toggle="modal" data-bs-target="#modal-confirm") Pilih
+          .card 
+            .card-body 
+              .d-flex.gap-7.align-items-center 
+                .rounded-3.bg-success.text-white.img-size-64.position-relative
+                  .position-absolute.w-100.h-100.justify-content-center.align-items-center.d-flex.top-0.start-0
+                    span PB
+                div 
+                  p.mb-1 Perumahan BSD 
+                  small.text-secondary
+                    sup Oleh Jia
+                .ms-auto 
+                  button.btn.btn-primary(type="button") Pilih
+  +modal('modal-confirm')(class="modal-sm")
+    .modal-header.px-5.pt-5(style="--bs-modal-header-border-width: 0;")
+      h5.modal-title
+      button.btn-close(type="button" data-bs-dismiss="modal" aria-label="Close")
+    .modal-body.px-5.pb-5
+      .text-center.mb-7
+        i.bi.bi-info-circle-fill.text-primary.text-opacity-25(style="font-size: 80px")
+        p Apakah anda yakin ingin keluar dari Akun ini?
+      .d-flex.gap-2 
+        button.btn.btn-outline-primary.text-uppercase.px-6(type="button" data-bs-toggle="modal" data-bs-target="#modal-alert") ya 
+        button.btn.btn-primary.text-uppercase.flex-grow-1(type="button") Tidak
+  +modal('modal-alert')
+    .modal-header.px-5.pt-5(style="--bs-modal-header-border-width: 0;")
+      h5.modal-title
+      button.btn-close(type="button" data-bs-dismiss="modal" aria-label="Close")
+    .modal-body.px-5.pb-5
+      .text-center.mb-7
+        i.bi.bi-info-circle-fill.text-primary.text-opacity-25(style="font-size: 80px")
+        p.text-uppercase ANDA BELUM MEMBAYAR IURAN MEMBERSHIP KOMUNITAS SELAMA 2 BULAN, SEHINGGA AKUN ANDA DI KOMUNITAS DI FREEZE SEMENTARA
+      .d-flex.gap-2 
+        button.btn.btn-outline-primary.text-uppercase.px-6(type="button") kembali 
+        button.btn.btn-primary.text-uppercase.flex-grow-1(type="button") bayar sekarang

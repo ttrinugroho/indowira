@@ -1,0 +1,316 @@
+---
+title: 'Laporan Progress Usaha Anggota Komunitas'
+currentUrl: 'laporan-progress'
+group: 'komunitas'
+---
+extends layouts/layout
+block header
+  include partials/header
+block footer 
+  include partials/footer
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                +btnback(title)
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.flex-column.gap-4
+                  .d-flex.align-items-center.justify-content-between
+                    p.small.mb-0 Berikut ini adalah Daftar Progress Kewirausahaan di Komunitas Anda:
+                    div 
+                      button.btn.btn-primary.text-uppercase(type="button") download pdf
+                  #level-5.accordion.laporan
+                    .accordion-item
+                      h2.accordion-header
+                        button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-5' aria-expanded='true' aria-controls='collapse-5')
+                          .d-flex.gap-4.align-items-center
+                            div 
+                              img(src="/img/symbol/level-5.png", alt="Level 5")
+                            div 
+                              h6.fw-normal Level 5 (Cari Amal)
+                              small.text-secondary Pengusaha Sejati
+                          .ms-auto.d-flex.align-items-center
+                            span.fs-3.me-3.text-primary 30
+                            span.text-secondary Anggota
+                      #collapse-5.accordion-collapse.collapse.show(data-bs-parent='#level-5')
+                        .accordion-body 
+                          table.table.table-bordered
+                            thead.small.table-secondary
+                              tr
+                                td Nama Brand 
+                                td Nama Founder 
+                                td Deskripsi 
+                                td No Wa 
+                                td Jumlah Tim 
+                                td Berdiri Sejak 
+                                td Omzet
+                            tbody 
+                              tr.table-light
+                                td.fw-medium(colspan="7") Kategori Kuliner
+                              each tb in [1,2]
+                                tr.small
+                                  td Jus Mimo 
+                                  td Imo 
+                                  td Jus Buah 
+                                  td 0812345678
+                                  td 10
+                                  td 12/12/2019
+                                  td Rp. 2.500.000/bulan
+                              tr.table-light
+                                td.fw-medium(colspan="7") Kategori Jasa
+                              each tb in [1,2]
+                                tr.small
+                                  td Jus Mimo 
+                                  td Imo 
+                                  td Jus Buah 
+                                  td 0812345678
+                                  td 10
+                                  td 12/12/2019
+                                  td Rp. 2.500.000/bulan
+                  #level-4.accordion.laporan
+                    .accordion-item(style="--bs-border-left-color: #001EDA;")
+                      h2.accordion-header
+                        button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-4' aria-expanded='true' aria-controls='collapse-4')
+                          .d-flex.gap-4.align-items-center
+                            div 
+                              img(src="/img/symbol/level-4.png", alt="Level 4")
+                            div 
+                              h6.fw-normal Level 4 (Cari Mitra)
+                              small.text-secondary Investor
+                          .ms-auto.d-flex.align-items-center
+                            span.fs-3.me-3.text-primary 30
+                            span.text-secondary Anggota
+                      #collapse-4.accordion-collapse.collapse(data-bs-parent='#level-4')
+                        .accordion-body 
+                          table.table.table-bordered
+                            thead.small.table-secondary
+                              tr
+                                td Nama Brand 
+                                td Nama Founder 
+                                td Deskripsi 
+                                td No Wa 
+                                td Jumlah Tim 
+                                td Berdiri Sejak 
+                                td Omzet
+                            tbody 
+                              tr.table-light
+                                td.fw-medium(colspan="7") Kategori Kuliner
+                              each tb in [1,2]
+                                tr.small
+                                  td Jus Mimo 
+                                  td Imo 
+                                  td Jus Buah 
+                                  td 0812345678
+                                  td 10
+                                  td 12/12/2019
+                                  td Rp. 2.500.000/bulan
+                              tr.table-light
+                                td.fw-medium(colspan="7") Kategori Jasa
+                              each tb in [1,2]
+                                tr.small
+                                  td Jus Mimo 
+                                  td Imo 
+                                  td Jus Buah 
+                                  td 0812345678
+                                  td 10
+                                  td 12/12/2019
+                                  td Rp. 2.500.000/bulan
+                  #level-3.accordion.laporan
+                    .accordion-item(style="--bs-border-left-color: #E3E045;")
+                      h2.accordion-header
+                        button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-3' aria-expanded='true' aria-controls='collapse-3')
+                          .d-flex.gap-4.align-items-center
+                            div 
+                              img(src="/img/symbol/level-3.png", alt="Level 3")
+                            div 
+                              h6.fw-normal Level 3 (Cari System)
+                              small.text-secondary Bussiness Owner
+                          .ms-auto.d-flex.align-items-center
+                            span.fs-3.me-3.text-primary 30
+                            span.text-secondary Anggota
+                      #collapse-3.accordion-collapse.collapse(data-bs-parent='#level-3')
+                        .accordion-body 
+                          table.table.table-bordered
+                            thead.small.table-secondary
+                              tr
+                                td Nama Brand 
+                                td Nama Founder 
+                                td Deskripsi 
+                                td No Wa 
+                                td Jumlah Tim 
+                                td Berdiri Sejak 
+                                td Omzet
+                            tbody 
+                              tr.table-light
+                                td.fw-medium(colspan="7") Kategori Kuliner
+                              each tb in [1,2]
+                                tr.small
+                                  td Jus Mimo 
+                                  td Imo 
+                                  td Jus Buah 
+                                  td 0812345678
+                                  td 10
+                                  td 12/12/2019
+                                  td Rp. 2.500.000/bulan
+                              tr.table-light
+                                td.fw-medium(colspan="7") Kategori Jasa
+                              each tb in [1,2]
+                                tr.small
+                                  td Jus Mimo 
+                                  td Imo 
+                                  td Jus Buah 
+                                  td 0812345678
+                                  td 10
+                                  td 12/12/2019
+                                  td Rp. 2.500.000/bulan
+                  #level-2.accordion.laporan
+                    .accordion-item(style="--bs-border-left-color: #DF55DC;")
+                      h2.accordion-header
+                        button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-2' aria-expanded='true' aria-controls='collapse-2')
+                          .d-flex.gap-4.align-items-center
+                            div 
+                              img(src="/img/symbol/level-2.png", alt="Level 2")
+                            div 
+                              h6.fw-normal Level 2 (Cari Duit)
+                              small.text-secondary Manager
+                          .ms-auto.d-flex.align-items-center
+                            span.fs-3.me-3.text-primary 30
+                            span.text-secondary Anggota
+                      #collapse-2.accordion-collapse.collapse(data-bs-parent='#level-2')
+                        .accordion-body 
+                          table.table.table-bordered
+                            thead.small.table-secondary
+                              tr
+                                td Nama Brand 
+                                td Nama Founder 
+                                td Deskripsi 
+                                td No Wa 
+                                td Jumlah Tim 
+                                td Berdiri Sejak 
+                                td Omzet
+                            tbody 
+                              tr.table-light
+                                td.fw-medium(colspan="7") Kategori Kuliner
+                              each tb in [1,2]
+                                tr.small
+                                  td Jus Mimo 
+                                  td Imo 
+                                  td Jus Buah 
+                                  td 0812345678
+                                  td 10
+                                  td 12/12/2019
+                                  td Rp. 2.500.000/bulan
+                              tr.table-light
+                                td.fw-medium(colspan="7") Kategori Jasa
+                              each tb in [1,2]
+                                tr.small
+                                  td Jus Mimo 
+                                  td Imo 
+                                  td Jus Buah 
+                                  td 0812345678
+                                  td 10
+                                  td 12/12/2019
+                                  td Rp. 2.500.000/bulan
+                  #level-1.accordion.laporan
+                    .accordion-item(style="--bs-border-left-color: #32DF3E;")
+                      h2.accordion-header
+                        button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-1' aria-expanded='true' aria-controls='collapse-1')
+                          .d-flex.gap-4.align-items-center
+                            div 
+                              img(src="/img/symbol/level-1.png", alt="Level 1")
+                            div 
+                              h6.fw-normal Level 1 (Cari Makan)
+                              small.text-secondary Self Employee
+                          .ms-auto.d-flex.align-items-center
+                            span.fs-3.me-3.text-primary 30
+                            span.text-secondary Anggota
+                      #collapse-1.accordion-collapse.collapse(data-bs-parent='#level-1')
+                        .accordion-body 
+                          table.table.table-bordered
+                            thead.small.table-secondary
+                              tr
+                                td Nama Brand 
+                                td Nama Founder 
+                                td Deskripsi 
+                                td No Wa 
+                                td Jumlah Tim 
+                                td Berdiri Sejak 
+                                td Omzet
+                            tbody 
+                              tr.table-light
+                                td.fw-medium(colspan="7") Kategori Kuliner
+                              each tb in [1,2]
+                                tr.small
+                                  td Jus Mimo 
+                                  td Imo 
+                                  td Jus Buah 
+                                  td 0812345678
+                                  td 10
+                                  td 12/12/2019
+                                  td Rp. 2.500.000/bulan
+                              tr.table-light
+                                td.fw-medium(colspan="7") Kategori Jasa
+                              each tb in [1,2]
+                                tr.small
+                                  td Jus Mimo 
+                                  td Imo 
+                                  td Jus Buah 
+                                  td 0812345678
+                                  td 10
+                                  td 12/12/2019
+                                  td Rp. 2.500.000/bulan
+                  #level-0.accordion.laporan
+                    .accordion-item(style="--bs-border-left-color: #1AE3E2;")
+                      h2.accordion-header
+                        button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-0' aria-expanded='true' aria-controls='collapse-0')
+                          .d-flex.gap-4.align-items-center
+                            div 
+                              img(src="/img/symbol/level-0.png", alt="Level 0")
+                            div 
+                              h6.fw-normal Level 0 (Cari Usaha)
+                              small.text-secondary Belum Punya Usaha
+                          .ms-auto.d-flex.align-items-center
+                            span.fs-3.me-3.text-primary 30
+                            span.text-secondary Anggota
+                      #collapse-0.accordion-collapse.collapse(data-bs-parent='#level-0')
+                        .accordion-body 
+                          table.table.table-bordered
+                            thead.small.table-secondary
+                              tr
+                                td Nama Brand 
+                                td Nama Founder 
+                                td Deskripsi 
+                                td No Wa 
+                                td Jumlah Tim 
+                                td Berdiri Sejak 
+                                td Omzet
+                            tbody 
+                              tr.table-light
+                                td.fw-medium(colspan="7") Kategori Kuliner
+                              each tb in [1,2]
+                                tr.small
+                                  td Jus Mimo 
+                                  td Imo 
+                                  td Jus Buah 
+                                  td 0812345678
+                                  td 10
+                                  td 12/12/2019
+                                  td Rp. 2.500.000/bulan
+                              tr.table-light
+                                td.fw-medium(colspan="7") Kategori Jasa
+                              each tb in [1,2]
+                                tr.small
+                                  td Jus Mimo 
+                                  td Imo 
+                                  td Jus Buah 
+                                  td 0812345678
+                                  td 10
+                                  td 12/12/2019
+                                  td Rp. 2.500.000/bulan

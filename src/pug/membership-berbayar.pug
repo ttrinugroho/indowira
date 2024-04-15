@@ -1,0 +1,302 @@
+---
+title: 'membership-berbayar'
+currentUrl: 'membership-berbayar'
+group: 'komunitas'
+---
+extends layouts/layout
+block header
+  include partials/header
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                .text-center 
+                  h5.mb-0 Membership
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.gap-4.align-items-center
+                  p.mb-0.text-info Komunitasmu ada iuran anggota, maka CREATE KOMUNITAS dengan type plan yang sesuai kebutuhan komunitasmu.
+                  .flex-grow-1.flex-shrink-0
+                    button.btn.btn-warning(type="button")
+                      span.me-4 Upgrap Plan Sekarang
+                      i.bi.bi-star-fill
+            ul.nav.nav-fill.tabs-komunitas.nav-underline.border(id="tab-komunitas" role="tablist")
+              li.nav-item
+                button.nav-link.text-uppercase.active(type="button" id="free-tab" data-bs-toggle="tab" data-bs-target="#free-tab-pane" role="tab" aria-controls="home-tab-pane" aria-selected="true")
+                  | free
+              li.nav-item.border-start
+                button.nav-link.text-uppercase(type="button" id="berbayar-tab" data-bs-toggle="tab" data-bs-target="#berbayar-tab-pane" role="tab" aria-controls="aktif-tab-pane" aria-selected="false")
+                  | berbayar
+            .tab-content#tab-membership
+              .tab-pane.tabs-side-slide.show.active(role="tabpanel" id='free-tab-pane' aria-labelledby="free-tab" tabindex="0")
+                .row.row-cols-4.gx-3
+                  .col 
+                    .card 
+                      .card-body.p-5
+                        .text-center
+                          h5.fw-semibold.text-uppercase.mb-6 berkomunitas 
+                          h3.mb-6.fw-normal.text-info FREE
+                  .col 
+                    .card 
+                      .card-body.p-5
+                        .text-center
+                          h5.fw-semibold.text-uppercase.mb-6 berkarya 
+                          h3.mb-6.fw-normal.text-info FREE
+                  .col 
+                    .card 
+                      .card-body.p-5
+                        .text-center
+                          h5.fw-semibold.text-uppercase.mb-6 mengajar 
+                          h3.mb-6.fw-normal.text-info FREE
+                  .col 
+                    .card 
+                      .card-body.p-5
+                        .text-center
+                          h5.fw-semibold.text-uppercase.mb-6 berwirausaha 
+                          h3.mb-6.fw-normal.text-info FREE
+              .tab-pane.tabs-side-slide(role="tabpanel" id='berbayar-tab-pane' aria-labelledby="berbayar-tab" tabindex="0")
+                .row.row-cols-4.gx-3
+                  .col 
+                    .card 
+                      .card-body.p-5
+                        .text-center
+                          h5.fw-semibold.text-uppercase.mb-6 berkomunitas 
+                          h3.fw-normal Rp. 5.000,-
+                          .mb-6 
+                            span.small.text-secondary Per member/ per bulan
+                        .d-flex.flex-column.gap-2.mb-6
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Update Feed 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Gabung Komunitas Lain 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Kelola WIRA LEADER 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Melihat Direktori
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Rubah Tagline 
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Membuat Komunitas 
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Mengelola Iuran Anggota 
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Membuat Group 
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Membuat Event 
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Membuat Kelas 
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Membuat News 
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Membuat Forum 
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Membuat Jobs/Lowongan
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Membuat Project 
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Kelola Syirkah 
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Kelola Mentoring
+                        .d-grid 
+                          button.btn.btn-primary.text-uppercase(type="button") upgrade
+                  .col 
+                    .card 
+                      .card-body.p-5
+                        .text-center
+                          h5.fw-semibold.text-uppercase.mb-6 berkarya 
+                          h3.fw-normal Rp. 10.000,-
+                          .mb-6 
+                            span.small.text-secondary Per member/ per bulan
+                        .d-flex.flex-column.gap-2.mb-6 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Rubah Tagline
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Update Feed 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Gabung Komunitas Lain 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Komunitas 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Mengelola Iuran Anggota 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Kelola WIRA LEADER
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Melihat Directory
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Group
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Event
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat News
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Forum
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Membuat Kelas
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Membuat Jobs/Lowongan
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Membuat Project
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Kelola Syirkah
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Kelola Mentoring
+                        .d-grid 
+                          button.btn.btn-primary.text-uppercase(type="button") upgrade
+                  .col 
+                    .card 
+                      .card-body.p-5
+                        .text-center
+                          h5.fw-semibold.text-uppercase.mb-6 mengajar 
+                          h3.fw-normal Rp. 15.000,-
+                          .mb-6 
+                            span.small.text-secondary Per member/ per bulan
+                        .d-flex.flex-column.gap-2.mb-6
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Rubah Tagline
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Update Feed 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Gabung Komunitas Lain 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Komunitas 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Mengelola Iuran Anggota 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Kelola WIRA LEADER
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Melihat Directory
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Group
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Event
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat News
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Forum
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Kelas
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Jobs/Lowongan
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Membuat Project
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Kelola Syirkah
+                          .align-middle 
+                            span.bi.bi-x-circle.text-secondary
+                            small.ms-2 Kelola Mentoring
+                        .d-grid 
+                          button.btn.btn-primary.text-uppercase(type="button") upgrade
+                  .col 
+                    .card 
+                      .card-body.p-5
+                        .text-center
+                          h5.fw-semibold.text-uppercase.mb-6 berwirausaha 
+                          h3.fw-normal Rp. 20.000,-
+                          .mb-6 
+                            span.small.text-secondary Per member/ per bulan
+                        .d-flex.flex-column.gap-2.mb-6
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Rubah Tagline
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Update Feed 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Gabung Komunitas Lain 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Komunitas 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Mengelola Iuran Anggota 
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Kelola WIRA LEADER
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Melihat Directory
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Group
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Event
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat News
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Forum
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Kelas
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Jobs/Lowongan
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Membuat Project
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Kelola Syirkah
+                          .align-middle 
+                            span.bi.bi-check-circle.text-success
+                            small.ms-2 Kelola Mentoring
+                        .d-grid 
+                          button.btn.btn-primary.text-uppercase(type="button") upgrade
+block footer 
+  include partials/footer

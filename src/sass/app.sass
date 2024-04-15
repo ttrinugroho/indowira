@@ -1,0 +1,131 @@
+@import "../../node_modules/bootstrap/scss/mixins/banner"
+@include bsBanner("")
+
+@import "./_variable"
+
+// scss-docs-start import-stack
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions"
+
+@import "../../node_modules/bootstrap/scss/variables"
+@import "../../node_modules/bootstrap/scss/variables-dark"
+@import "../../node_modules/bootstrap/scss/maps"
+@import "../../node_modules/bootstrap/scss/mixins"
+@import "../../node_modules/bootstrap/scss/utilities"
+
+// Layout & components
+@import "../../node_modules/bootstrap/scss/root"
+@import "../../node_modules/bootstrap/scss/reboot"
+@import "../../node_modules/bootstrap/scss/type"
+@import "../../node_modules/bootstrap/scss/images"
+@import "../../node_modules/bootstrap/scss/containers"
+@import "../../node_modules/bootstrap/scss/grid"
+@import "../../node_modules/bootstrap/scss/tables"
+@import "../../node_modules/bootstrap/scss/forms"
+@import "../../node_modules/bootstrap/scss/buttons"
+@import "../../node_modules/bootstrap/scss/transitions"
+@import "../../node_modules/bootstrap/scss/dropdown"
+@import "../../node_modules/bootstrap/scss/button-group"
+@import "../../node_modules/bootstrap/scss/nav"
+@import "../../node_modules/bootstrap/scss/navbar"
+@import "../../node_modules/bootstrap/scss/card"
+@import "../../node_modules/bootstrap/scss/accordion"
+@import "../../node_modules/bootstrap/scss/breadcrumb"
+@import "../../node_modules/bootstrap/scss/pagination"
+@import "../../node_modules/bootstrap/scss/badge"
+@import "../../node_modules/bootstrap/scss/alert"
+@import "../../node_modules/bootstrap/scss/progress"
+@import "../../node_modules/bootstrap/scss/list-group"
+@import "../../node_modules/bootstrap/scss/close"
+@import "../../node_modules/bootstrap/scss/toasts"
+@import "../../node_modules/bootstrap/scss/modal"
+@import "../../node_modules/bootstrap/scss/tooltip"
+@import "../../node_modules/bootstrap/scss/popover"
+@import "../../node_modules/bootstrap/scss/carousel"
+@import "../../node_modules/bootstrap/scss/spinners"
+@import "../../node_modules/bootstrap/scss/offcanvas"
+@import "../../node_modules/bootstrap/scss/placeholders"
+
+// Helpers
+@import "../../node_modules/bootstrap/scss/helpers"
+
+// Utilities
+@import "../../node_modules/bootstrap/scss/utilities/api"
+// scss-docs-end import-stack
+@import "./_nice-select"
+// css custom form-control
+@import "./_form-custom"
+.nav-pills.indowira
+    --bs-nav-pills-link-active-color: var(--bs-primary)
+    --bs-nav-pills-link-active-bg: var(--bs-white)
+    --bs-nav-link-color: var(--bs-white)
+    --bs-nav-link-hover-color: rgba(var(--bs-white-rgb), .5)
+main.content 
+    background-color: #F8FAFB
+.tabs-side
+    --bs-nav-link-color: var(--bs-secondary-color)
+    --bs-nav-link-hover-color: var(--bs-info)
+    --bs-nav-link-padding-y: 1rem
+    .nav-link.active
+        color: var(--bs-info)
+        font-weight: normal
+    &-slide.tab-pane.active
+        animation: slide-down .35s ease-in-out
+.tabs-komunitas.nav-underline
+    --bs-nav-link-color: var(--bs-secondary-color)
+    --bs-nav-link-hover-color: rgba(var(--bs-primary-rgb),.5)
+    --bs-nav-link-padding-y: 1rem
+    --bs-nav-underline-gap: 0
+    --bs-nav-underline-border-width: 2px
+    --bs-nav-underline-link-active-color: var(--bs-primary)
+@keyframes slide-down
+    0%
+        opacity: 0
+        transform: translateX(100%)
+    100%
+        opacity: 1
+        transform: translateX(0)
+.feed-image
+    height: 144px
+.komunitas-image
+    width: 160px
+    height: 160px
+.pagination
+    --bs-pagination-border-width: 0
+    --bs-pagination-padding-x: 1rem
+    --bs-pagination-padding-y: 0.5rem
+    --bs-pagination-font-size: 0.875rem
+    --bs-pagination-color: inherit
+    --bs-pagination-active-bg: #{$red-300}
+    --bs-pagination-border-radius: none
+    --bs-pagination-disabled-bg: var(--bs-body-bg)
+    --bs-pagination-disabled-color: var(--bs-secondary)
+    margin-bottom: 0
+    .page-link.active, .active > .page-link
+        border-radius: 8px
+.img-size-64
+    width: 64px
+    height: 64px
+.img-size-110
+    width: 100px
+    height: 110px
+.input-logo
+    border: 1px dashed var(--bs-secondary)
+    display: block
+    color: var(--bs-secondary)
+    text-align: center
+    cursor: pointer
+    &:hover
+        color: var(--bs-border-color-translucent)
+.accordion.laporan
+    --bs-accordion-active-color: var(--bs-body-color)
+    --bs-accordion-active-bg: var(--bs-body-bg)
+    --bs-accordion-btn-focus-box-shadow: none
+    .accordion-item
+        &:not(.nonbd)
+            --bs-border-left-color: var(--bs-primary)
+            border-left-width: 4px
+            border-left-color: var(--bs-border-left-color)
+        
+    .accordion-button::after
+        margin-left: 1rem

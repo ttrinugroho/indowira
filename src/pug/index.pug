@@ -1,0 +1,9 @@
+---
+title: 'Feed'
+currentUrl: feed
+---
+extends layouts/layout
+block content
+  main.content.container-fluid
+    each link in ['feed','komunitas','pengurus','directory','komunitas-detail','member-detail']
+      a.btn.btn-link(href="/"+link+".html")=link

@@ -1,0 +1,108 @@
+---
+title: 'Pengurus Komunitas'
+currentUrl: 'pengurus'
+group: 'komunitas'
+---
+extends layouts/layout
+block header
+  include partials/header
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                .text-center 
+                  h5.mb-0 Pengumuman
+            .card.rounded-3.border-0
+              .card-body.p-5
+                div 
+                  p Filter Pencarian
+                .row.gy-5
+                  .col
+                    .position-relative.flex-grow-1
+                      input.form-control.px-6(type="text" placeholder="Seach")
+                      .position-absolute.top-0.ps-3.py-2
+                        span.bi.bi-search
+                  .col 
+                    div 
+                      select#provinsi.select.wide(name="provinsi")
+                        option(value="") Semua
+                        option(value="1") Hobby
+                        option(value="2") Pekerjaan
+                  .col
+                    div
+                      select#kategori.select.wide(name="kategori")
+                        option(value="") Kategori
+                        option(value="1") Sekolah/kampus/alumni
+                        option(value="2") Perumahan
+                        option(value="3") Keluarga
+                        option(value="4") Wirausaha/bisnis
+                        option(value="5") Hoby
+                        option(value="6") Asosiasi/perkumpulan profit
+                        option(value="7") Asosiasi/perkumpulan non profit
+                  .col-auto 
+                    div 
+                      button.btn.btn-primary.text-uppercase(type="button") cari
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.flex-column.gap-5
+                  .text-end 
+                    button.btn.btn-primary.text-uppercase(type="button")
+                      i.bi.bi-plus 
+                      span.ms-2 tambah pengumuman
+                  each info in [1,2,3]
+                    .card.rounded-3
+                      .card-body.p-5
+                        .d-flex.flex-column.gap-5 
+                          .d-flex.justify-content-between 
+                            .d-flex.align-items-center.gap-3
+                              div(style="width: 50px; height: 50px")
+                                img.rounded-circle.w-100.h-100.object-fit-cover(src="/img/contents/profile-pengurus.png", alt="Alex Thomas")
+                              div 
+                                h6.mb-1 Alex Thomas 
+                                span.badge.text-secondary 17 Appril 2024
+                            div 
+                              a.btn(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                i.bi.bi-three-dots-vertical
+                              ul.dropdown-menu.dropdown-menu-end.rounded-0.p-0
+                                li.border-bottom
+                                  a.dropdown-item.py-4(href='#')
+                                    i.bi.bi-bookmark
+                                    span.ms-2 Simpan
+                                li.border-bottom
+                                  a.dropdown-item.py-4(href='#')
+                                    i.bi.bi-info-circle
+                                    span.ms-2 Laporkan 
+                                li
+                                  a.dropdown-item.py-4(href='#')
+                                    i.bi.bi-trash
+                                    span.ms-2 Hapus 
+                          div 
+                            h6
+                              span.badge.bg-secondary-subtle.text-secondary Hobby 
+                            h5 Seminar Memasak 
+                            p.text-secondary Sometimes this is the irony of promoting your businesses products and services, because for a fact that you want to make your business Lorem ipsum dolor sit amet consectetur. Cursus sociis placerat nisi suscipit.
+                          ul.nav.nav-pills.nav-fill.border-top.border-bottom
+                            li.nav-item
+                              a.nav-link.link-dark(href='#')
+                                svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                  path(d='M4.99996 6.66667H3.33329C2.41282 6.66667 1.66663 7.41286 1.66663 8.33333V15.8333C1.66663 16.7538 2.41282 17.5 3.33329 17.5H4.99996C5.92043 17.5 6.66663 16.7538 6.66663 15.8333V8.33333C6.66663 7.41286 5.92043 6.66667 4.99996 6.66667Z' stroke='#252631' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                                  path(d='M13.2307 17.5H10.1759C9.5178 17.5 8.87444 17.3052 8.32688 16.9402L7.03771 16.0807C6.80588 15.9262 6.66663 15.666 6.66663 15.3873V8.55464C6.66663 8.40961 6.70447 8.2671 6.77642 8.14119L9.99996 2.5H11.1072C12.7712 2.5 13.7636 4.35447 12.8407 5.73896L11.6666 7.5H16.1987C17.283 7.5 18.0785 8.51898 17.8156 9.57089L16.4645 14.9751C16.0935 16.459 14.7603 17.5 13.2307 17.5Z' stroke='#252631' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                                span.ms-2 Like
+                            li.nav-item
+                              a.nav-link.link-dark(href='#')
+                                svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                  path(d='M6.66675 8.33333H13.3334M6.66675 11.6667H10.0001M9.16675 2.5H10.8334C14.9756 2.5 18.3334 5.85786 18.3334 10C18.3334 14.1421 14.9756 17.5 10.8334 17.5H5.00008C3.15913 17.5 1.66675 16.0076 1.66675 14.1667V10C1.66675 5.85786 5.02461 2.5 9.16675 2.5Z' stroke='#252631' stroke-width='1.5' stroke-linecap='round')
+                                span.ms-2 Comment
+                            li.nav-item
+                              a.nav-link.link-dark(href='#')
+                                svg(width='20' height='20' viewbox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                  path(d='M16.1579 2.5H3.84253C1.94952 2.5 0.962918 4.69624 2.24691 6.05195L4.82148 8.77034C5.19175 9.16129 5.39736 9.67382 5.39736 10.2059V15.3794C5.39736 17.3946 8.01354 18.2695 9.28292 16.6788L17.872 5.91578C18.9814 4.52559 17.9649 2.5 16.1579 2.5Z' stroke='#252631' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round')
+                                span.ms-2 Share
+block footer 
+  include partials/footer

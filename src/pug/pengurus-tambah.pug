@@ -1,0 +1,79 @@
+---
+title: 'Tambah Pengurus'
+currentUrl: 'pengurus-tambah'
+group: 'komunitas'
+---
+extends layouts/layout
+block header
+  include partials/header
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                +btnback('Tambah Pengurus')
+            .card.rounded-3.border-0
+              .card-body.p-5 
+                .d-flex.flex-column.gap-5 
+                  .text-end 
+                    button.btn.btn-secondary(type="button") Cancel 
+                    button.btn.btn-primary.ms-3(type="button") Simpan
+                  hr.my-0
+                  .d-flex.justify-content-between.align-items-center
+                    h6.mb-0 Pengurus Inti
+                    div
+                      button(type="button").btn.text-primary
+                        i.bi.bi-plus-square-fill
+                  each form in [1,2,3]
+                    .row.align-items-center
+                      .col 
+                        div 
+                          label.form-label.small(for="") Jabatan
+                          select#jabatan.select.wide(name="jabatan")
+                            option(value="") Ketua
+                            option(value="1") Sekretaris
+                            option(value="3") Bendahara
+                      .col 
+                        div 
+                          label.form-label.small(for="") Nama Pengurus
+                          select#pengurus.select.wide(name="pengurus")
+                            option(value="") Raka
+                            option(value="1") Quba 
+                            option(value="2") Buryha
+                      .col-auto 
+                        div
+                          button(type="button").btn.text-primary
+                            i.bi.bi-trash
+                  hr.my-0
+                  .d-flex.justify-content-between.align-items-center
+                    h6.mb-0 Pengurus Bidang
+                    div
+                      button(type="button").btn.text-primary
+                        i.bi.bi-plus-square-fill
+                  each form in [1,2,3]
+                    .row.align-items-center
+                      .col 
+                        div 
+                          label.form-label.small(for="") Jabatan
+                          select#jabatan.select.wide(name="jabatan")
+                            option(value="") Bidang Pemasaran
+                            option(value="1") Bidang Lapangan
+                            option(value="3") Bidang 
+                      .col 
+                        div 
+                          label.form-label.small(for="") Nama Pengurus
+                          select#pengurus.select.wide(name="pengurus")
+                            option(value="") Liando
+                            option(value="1") Parka 
+                            option(value="2") Balaran
+                      .col-auto 
+                        div
+                          button(type="button").btn.text-primary
+                            i.bi.bi-trash
+block footer 
+  include partials/footer

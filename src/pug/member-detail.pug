@@ -1,0 +1,67 @@
+---
+title: 'Detail Member'
+currentUrl: 'member-detail'
+group: 'komunitas'
+---
+extends layouts/layout
+block header
+  include partials/header
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                +btnback('Detail Member')
+            .rounded-3.p-5.d-flex.align-items-end.justify-content-between(style="height: 384px;background-image: url(/img/contents/bg-profile.png)")
+              div 
+                .mb-4
+                  img.img-size-110.rounded-circle.object-fit-cover(src="/img/contents/profile.jpeg", alt="Hery")
+                h6.text-uppercase hery priyabudi 
+                p.mb-0.small.text-secondary UI/UX Designer
+              .d-flex.gap-2.align-items-center
+                each social in ['facebook','instagram','twitter','tiktok','youtube','linkedin']
+                  a.rounded-circle.link-primary.bg-white(href="/") 
+                    i.bi.d-inline-flex.fs-5.p-2(class='bi-'+social)
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .row.row-cols-2.gy-5 
+                  .col 
+                    div 
+                      label.form-label.fw-medium(for="") NIK
+                      p.text-secondary.mb-0 1213 12124 1241242
+                  .col 
+                    div 
+                      label.form-label.fw-medium(for="") Bidang Pekerjaan
+                      p.text-secondary.mb-0 Technology
+                  .col 
+                    div 
+                      label.form-label.fw-medium(for="") Email
+                      p.text-secondary.mb-0 hery@gmail.com
+                  .col 
+                    div 
+                      label.form-label.fw-medium(for="") Phone Number
+                      p.text-secondary.mb-0 +62 8136 1310 1314
+                  .col 
+                    div 
+                      label.form-label.fw-medium(for="") Nama Perusahaan
+                      p.text-secondary.mb-0 PT. Sejahtera
+                  .col 
+                    div 
+                      label.form-label.fw-medium(for="") Jabatan Dalam Perusahaan
+                      p.text-secondary.mb-0 Manager
+                  .col-12 
+                    div 
+                      label.form-label.fw-medium(for="") Bio
+                      p.text-secondary.mb-0 Lorem ipsum dolor sit amet consectetur. Ornare massa et ultrices dictum quis orci et. At quam amet aliquet at. Urna consequat sagittis tellus mauris risus a. Dictum justo mi felis aenean purus. Ut ut amet auctor ac. Ornare aliquam scelerisque arcu massa nec nisl sed. Vitae duis netus ac lorem ornare at aenean bibendum. Enim laoreet dapibus amet eu. Dis interdum fames aenean vulputate a pharetra ipsum at non. Metus ut sed sagittis pulvinar netus ut ultrices. Penatibus in sit proin dictum pharetra sem sollicitudin.
+                  .col-12 
+                    div 
+                      label.form-label.fw-medium(for="") Maps
+                      .bg-light.rounded-2.overflow-hidden
+                        iframe(frameborder='0' height='250' width='auto' style='width: 100%;' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?width=320&height=320&hl=en&q=-6.1754083,106.824584&t=&z=14&ie=UTF8&iwloc=B&output=embed')
+block footer 
+  include partials/footer

@@ -1,0 +1,72 @@
+---
+title: 'Laporan Syirkah Antar Anggota Komunitas'
+currentUrl: 'laporan-syirkah'
+group: 'komunitas'
+---
+extends layouts/layout
+block header
+  include partials/header
+block footer 
+  include partials/footer
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                +btnback(title)
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.flex-column.gap-4
+                  .d-flex.align-items-center.justify-content-between
+                    p.small.mb-0 Berikut ini adalah Daftar Progress Kewirausahaan di Komunitas Anda:
+                    div 
+                      button.btn.btn-primary.text-uppercase(type="button") download pdf
+                  each sy in [1,2,3]
+                    .accordion.laporan(id="level-"+sy)
+                      .accordion-item.nonbd
+                        h2.accordion-header
+                          button.accordion-button.collapsed(type='button' data-bs-toggle='collapse', data-bs-target='#collapse-'+sy, aria-expanded='false', aria-controls='collapse-'+sy)
+                            .card 
+                              .card-body
+                                .d-flex.gap-8.align-items-center
+                                  div
+                                    .d-flex.gap-4.align-items-center.mb-4
+                                      img.rounded-circle.object-fit-cover(src="/img/contents/bakso-aci.jpeg", alt="", height="40", width="40")
+                                      h6.fw-normal Bakso Aci
+                                    .text-primary.mb-2 
+                                      span.badge.fw-normal.text-primary Level 0
+                                      span.fw-normal.badge.rounded-pill.bg-primary-subtle.text-primary Baru Memulai Usaha
+                                    .mb-2 
+                                      span.badge.fw-normal.text-secondary Makanan/Kuliner
+                                    div 
+                                      i.bi.bi-pin-fill.text-secondary(style="font-size: 10px;")
+                                      span.badge.fw-normal.text-secondary Jl. Darmajaya, Jakarta Timur
+                                  .text-center 
+                                    h6.fw-normal Valuasi Usaha 
+                                    .d-inline-block.p-4.rounded.bg-success.text-white.mb-2
+                                      h5.mb-0 30 Juta 
+                                    div 
+                                      span.badge.fw-normal.text-secondary 100 lembar saham @ 1 juta/lembar
+                            .ms-auto
+                              span.text-secondary 5 Pesyirkah
+                        .accordion-collapse.collapse(data-bs-parent='#level-'+sy , id='collapse-'+sy)
+                          .accordion-body 
+                            table.table.table-bordered
+                              thead.small.table-secondary
+                                tr
+                                  td.text-center No 
+                                  td.text-center Nama Pesyirkah 
+                                  td.text-center Jumlah Saham 
+                                  td.text-center Jumlah Dana 
+                              tbody.small 
+                                each no in [1,2,3,4,5]
+                                  tr 
+                                    td.text-center="Pesyirkah 0"+no
+                                    td.text-center Indra Ken
+                                    td.text-center 50 Lembar
+                                    td.text-center Rp. 50.000.000,-

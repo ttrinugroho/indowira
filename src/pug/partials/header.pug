@@ -1,0 +1,60 @@
+header
+  .container-fluid.py-4.bg-white
+    .d-flex.gap-4.align-items-center.mx-lg-7
+      .col-3
+        .text-center.fs-4.fw-bold Indowira
+      .input-group.w-100.form-control.px-0
+        span.px-4.py-2
+          i.bi.bi-search
+        input.form-control.px-0.py-2.border-0(type='text' placeholder='Search for task and etc.' aria-label='Username' aria-describedby='basic-addon1')
+      .col-3
+        .d-flex.gap-5.align-items-center
+          .d-flex.gap-5.align-items-center.ms-auto
+            div
+              i.bi.bi-grid-fill.p-1.d-inline-flex.align-items-center.justify-content-center
+            div
+              i.bi-house.p-1.d-inline-flex.align-items-center.justify-content-center
+            div
+              i.bi.bi-bell.p-1.d-inline-flex.align-items-center.justify-content-center
+          .d-flex.gap-2.align-items-center
+            span.small Hery
+            img.rounded-circle.object-fit-cover(src="/img/contents/profile.jpeg",width="40", height="40", alt="Profile", style="width:40px;height:40px")
+  nav.py-3.bg-primary.border-bottom
+    .container-fluid.d-flex.flex-wrap
+      ul.nav.nav-pills.nav-fill.indowira.w-100.fw-medium.mx-lg-7
+        +navitem('feed')
+          | Feed
+        +groupitem('komunitas',['komunitas','pengurus','member','pengumuman','membership','laporan','kategori'])
+          | Komunitas
+        li.nav-item
+          a.nav-link.px-2(href='#') Komunitas
+        li.nav-item
+          a.nav-link.px-2(href='#') Dashboard
+        li.nav-item
+          a.nav-link.px-2(href='#') Wira Leader
+        li.nav-item.dropdown
+          a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+            | Directory
+          ul.dropdown-menu
+            li
+              a.dropdown-item(href='#') Action
+            li
+              a.dropdown-item(href='#') Another action
+            li
+              a.dropdown-item(href='#') Something else here
+        li.nav-item
+          a.nav-link.px-2(href='#') Grup
+        li.nav-item
+          a.nav-link.px-2(href='#') Event
+        li.nav-item
+          a.nav-link.px-2(href='#') Kelas
+        li.nav-item
+          a.nav-link.px-2(href='#') Artikel
+        li.nav-item
+          a.nav-link.px-2(href='#') Forum
+        li.nav-item
+          a.nav-link.px-2(href='#') Jobs
+        li.nav-item
+          a.nav-link.px-2(href='#') Project
+        li.nav-item
+          a.nav-link.px-2(href='#') Mentorship

@@ -1,0 +1,186 @@
+---
+title: 'Komunitas'
+currentUrl: komunitas
+---
+extends layouts/layout
+block header
+  include partials/header
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                .text-center 
+                  h5.mb-0 Komunitas
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.gap-5.align-items-center
+                  .text-info
+                    p.mb-0 Komunitasmu adalah free membership? Ayo BUAT KOMUNITAS dan BERANI MENGELOLA KOMUNITAS-mu sendiri dengan fitur yang lengkap !
+                  div.flex-shrink-0
+                    +btn
+                      | buat komunitas 
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.gap-5.align-items-center
+                  .text-info
+                    p.mb-0 Komunitasmu adalah komunitas dengan membership berbayar ? Ayo upgrade membershipmu agar dapat BUAT KOMUNITAS dan “moneytize” komunitas-mu !
+                  .flex-shrink-0
+                    button.btn.btn-warning.text-white(type="button")
+                      span.me-2 Upgrade Plan Sekarang
+                      i.bi.bi-star-fill
+            .card.rounded-3.border-0.bg-primary.bg-gradient(style="--bs-gradient: linear-gradient(270deg, #730000 0.09%, #CD2F2F 99.92%)")
+              .card-body.p-7.text-white
+                p Selamat datang di KOMUNITAS INDOWIRA, Komunitasnya Orang Indonesia yang Berani !
+                h4.fw-normal Buatlah Sub Komunitas atau bergabunglah dengan komunitas berani lainnya dan gerakan komunitas Anda untuk mendorong investasi dan charity.
+            .card.rounded-3.border-0
+              .card-body.p-5
+                h6 Komunitas yang Anda ikuti 
+                .border 
+                  h2 Carousel 
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.flex-column.gap-5
+                  h6 Daftar Komunitas 
+                  hr.m-0
+                  div 
+                    p Filter Pencarian
+                    .row.gy-5
+                      .col-6
+                        div 
+                          input#search.form-control(type="text", name="seacrh", placeholder="search for community")
+                      .col-6 
+                        div
+                          select#kategori.select.wide(name="kategori")
+                            option(value="") Pilih Kategori
+                            option(value="1") Sekolah/kampus/alumni
+                            option(value="2") Perumahan
+                            option(value="3") Keluarga
+                            option(value="4") Wirausaha/bisnis
+                            option(value="5") Hoby
+                            option(value="6") Asosiasi/perkumpulan profit
+                            option(value="7") Asosiasi/perkumpulan non profit
+                      .col 
+                        div 
+                          select#provinsi.select.wide(name="provinsi")
+                            option(value="") Pilih Provinsi
+                            option(value="1") DKI JAKARTA
+                            option(value="2") JAWA BARAT
+                            option(value="3") JAWA TIMUR
+                            option(value="4") JAWA TENGAH
+                            option(value="5") KALIMANTAN SELATAN
+                            option(value="6") KALIMANTAN TIMUR
+                            option(value="7") SULAWESI
+                      .col 
+                        div 
+                          select#kota.select.wide(name="kota")
+                            option(value="") Kota/Kabupaten
+                            option(value="1") Jakarta Selatan
+                            option(value="2") Jakarta Timur
+                            option(value="3") Jakarta Barat
+                            option(value="4") Jakarta Pusat
+                      .col 
+                        div 
+                          select#kecamatan.select.wide(name="kecamatan")
+                            option(value="") Kecamatan
+                            option(value="1") Jakarta Selatan
+                            option(value="2") Jakarta Timur
+                            option(value="3") Jakarta Barat
+                            option(value="4") Jakarta Pusat
+                      .col 
+                        div 
+                          select#kelurahan.select.wide(name="kelurahan")
+                            option(value="") Kelurahan
+                            option(value="1") Jakarta Selatan
+                            option(value="2") Jakarta Timur
+                            option(value="3") Jakarta Barat
+                            option(value="4") Jakarta Pusat
+                      .col-auto
+                        div 
+                          button.btn.btn-primary.text-uppercase(type="button") cari
+                  hr.m-0
+                  ul.nav.nav-fill.tabs-komunitas.nav-underline.border(id="tab-komunitas" role="tablist")
+                    li.nav-item
+                      button.nav-link.text-uppercase.active(type="button" id="free-tab" data-bs-toggle="tab" data-bs-target="#free-tab-pane" role="tab" aria-controls="home-tab-pane" aria-selected="true")
+                        | free
+                    li.nav-item.border-start
+                      button.nav-link.text-uppercase(type="button" id="berbayar-tab" data-bs-toggle="tab" data-bs-target="#berbayar-tab-pane" role="tab" aria-controls="aktif-tab-pane" aria-selected="false")
+                        | berbayar
+                  .tab-content#tab-komunitas-content
+                    each kom in ['free','berbayar']
+                      .tab-pane.tabs-side-slide(role="tabpanel" class={'show active': kom === 'free'} id=kom+'-tab-pane' aria-labelledby=kom+"-tab" tabindex="0")
+                        .row.row-cols-3.gy-5
+                          each bla in [1,2,3,4,5,6,7,8,9] 
+                            .col
+                              .card
+                                .card-body.p-5 
+                                  .text-center
+                                    h5.badge.text-info.bg-info-subtle.fw-normal.text-capitalize hoby 
+                                  .text-center.py-2
+                                    .komunitas-image.d-inline-block.rounded-3
+                                      img.w-100.h-100.object-fit-cover.rounded-3(src="/img/contents/komunitas-1.jpeg", alt="sepedaan foto")
+                                  .text-center.mt-2
+                                    h6.text-capitalize sepedaan 
+                                    p.small.text-secondary Jumlah member saat ini 45 orang
+                                  .d-grid
+                                    button.btn.btn-outline-info.text-uppercase(type="button") ikut komunitas
+                          .col-12 
+                            .d-flex.justify-content-center 
+                              nav(aria-label='Page navigation example')
+                                ul.pagination
+                                  li.page-item.disabled
+                                    a.page-link(href='#') Previous
+                                  li.page-item
+                                    a.page-link(href='#') 1
+                                  li.page-item.active
+                                    a.page-link(href='#') 2
+                                  li.page-item
+                                    a.page-link(href='#') 3
+                                  li.page-item
+                                    a.page-link(href='#') Next
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.flex-column.gap-5
+                  .d-flex.justify-content-between.align-items-center
+                    h6 Komunitas Anda
+                    .d-grid(style="width: 240px;")
+                      a.btn.btn-primary.text-uppercase(type="button" href="/komunitas-buat.html") buat komunitas 
+                  div 
+                    table.table.small
+                      thead
+                        tr.table-info
+                          th.text-center.py-4.text-uppercase(scope='col') nama komunitas
+                          th.text-center.py-4.text-uppercase(scope='col') tanggal pendirian
+                          th.text-center.py-4.text-uppercase(scope='col') deskripsi 
+                          th.text-center.py-4.text-uppercase(scope='col') tindakan
+                      tbody.align-middle
+                        each tb in [1,2,3,4,5,6,7]
+                          tr
+                            td.text-center Perizinan
+                            td.text-center 24 Januari 2022
+                            td.text-center Komunitas sekolah perizinan angkatan 2
+                            td.text-center
+                              .dropdown
+                                a.btn.btn-sm(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                  i.bi.bi-three-dots-vertical
+                                ul.dropdown-menu.dropdown-menu-end.rounded-0.p-0
+                                  li.border-bottom
+                                    a.dropdown-item.py-4(href='/komunitas-detail.html')
+                                      i.bi.bi-eye
+                                      span.ms-2 Lihat Detail
+                                  li.border-bottom
+                                    a.dropdown-item.py-4(href='#')
+                                      i.bi.bi-pencil
+                                      span.ms-2 Edit
+                                  li.border-bottom
+                                    a.dropdown-item.py-4(href='#')
+                                      i.bi.bi-trash
+                                      span.ms-2 Hapus
+block footer
+  include partials/footer
+

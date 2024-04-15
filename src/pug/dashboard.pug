@@ -1,0 +1,123 @@
+---
+title: 'Dashboard'
+currentUrl: 'dashboard'
+---
+extends layouts/layout
+block header
+  include partials/header
+block footer 
+  include partials/footer
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                .text-center
+                  h6.small.mb-0 KATEGORI PERUMAHAN
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.justify-content-between.align-items-center
+                  h5.mb-0.text-secondary.fw-normal Saya orang yang BERANI BERKOMUNITAS
+                  div 
+                    button.btn.btn-warning.text-white(type="button")
+                      span Upgrade Plan
+                      i.bi.bi-star-fill
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.justify-content-between.align-items-center
+                  h6.mb-0 Kendala Usahaku 
+                  div.d-flex.gap-1
+                    span.badge.text-primary.bg-primary-subtle.rounded-0.fw-normal Perbankan Keuangan Syariah 
+                    span.badge.text-primary.bg-primary-subtle.rounded-0.fw-normal Coach dan Mentor 
+                    span.badge.text-primary.bg-primary-subtle.rounded-0.fw-normal Konsultan Branding 
+                    span.badge.text-primary.bg-primary-subtle.rounded-0.fw-normal Digital Marketing
+            .card.rounded-3.border-0
+              .card-body.p-5
+                h5.mt-2 Upgrade Plan-mu 
+                .card.rounded-3.border-0.bg-primary.bg-gradient(style="--bs-gradient: linear-gradient(270deg, #111C3A 0.09%, #4E66A7 99.92%);")
+                  .card-body.p-7.text-white
+                    p Selamat datang di Komunitas Orang Indonesia yang Berani
+                    h4 BERANI BERKOMUNITAS, BERANI BERKARYA, BERANI MENGAJAR, BERANI BERIWIRAUSAHA, BERANI INVESTASI
+                    .mt-5
+                      button.btn.btn-info.text-uppercase(type="button") buat komunitas
+                .row.row-cols-3.g-4.my-4
+                  .col 
+                    .card 
+                      .card-body
+                        .text-center 
+                          h5.fw-normal
+                            span.text-secondary.d-block Aku ingin menjadi
+                            span.text-primary FOUNDER KOMUNITAS
+                        .text-center.py-4.my-4
+                          img(src="/img/symbol/founder-komunitas.png", alt="founder komunitas", width="80" height="80")
+                        .text-center.pt-4
+                          p.small.text-secondary Aku berani menjadi founder dari sebuah komunitas, aku mempunyai visi dan misi dalam membangun komunitasku. Aku ingin berkarya di komunitasku.
+                        .d-grid.mt-8
+                          button.btn.btn-primary.text-uppercase(type="button") upgrade plan
+                  .col 
+                    .card 
+                      .card-body
+                        .text-center 
+                          h5.fw-normal
+                            span.text-secondary.d-block Aku ingin menjadi
+                            span.text-primary FOUNDER SEKOLAH
+                        .text-center.py-4.my-4
+                          img(src="/img/symbol/bekerja.png", alt="bekerjasama", width="80" height="80")
+                        .text-center.pt-4
+                          p.small.text-secondary Aku telah menggalakan kewirausahawan di komunitasku. Komunitas wirausahaku butuh investor. Aku ingin wirausaha komunitas maju.
+                        .d-grid.mt-8
+                          button.btn.btn-primary.text-uppercase(type="button") upgrade plan
+                  .col 
+                    .card 
+                      .card-body
+                        .text-center 
+                          h5.fw-normal
+                            span.text-secondary.d-block Aku PENGUSAHA
+                            span.text-primary ingin BEKERJASAMA
+                        .text-center.py-4.my-4
+                          img(src="/img/symbol/founder-sekolah.png", alt="founder sekolah", width="80" height="80")
+                        .text-center.pt-4
+                          p.small.text-secondary Aku tidak hanya menggerakan kegiatan di komunitasku, tapi aku juga mengaktifkan edukasi di komunitasku. Aku ingin buka kelas di komunitasku.
+                        .d-grid.mt-8
+                          button.btn.btn-primary.text-uppercase(type="button") upgrade plan
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.justify-content-between.align-items-center 
+                  h5.mt-2 Komunitas yang Anda Ikuti
+                  button.btn.text-primary.text-uppercase(type="button") lihat komunitas lain
+                div.my-5
+                  .row.row-cols-5 
+                    each ca in [1,2]
+                      .col 
+                        .card
+                          .card-body
+                            .mb-4
+                              img.rounded-2.object-fit-cover.w-100(src="/img/contents/asik-masak.jpeg", alt="bakso aci", width="120" height="120")
+                            .text-center
+                              span.badge.rounded-0.fw-normal.bg-info-subtle.text-info FnB
+                              h6.mt-2 Asik Masak
+                      .col 
+                        .card
+                          .card-body
+                            .mb-4
+                              img.rounded-2.object-fit-cover.w-100(src="/img/contents/bibit-go.jpeg", alt="bakso aci", width="120" height="120")
+                            .text-center
+                              span.badge.rounded-0.fw-normal.bg-info-subtle.text-info Tanaman
+                              h6.mt-2 Bibit Go
+                    .col 
+                      .card
+                        .card-body
+                          .mb-4
+                            img.rounded-2.object-fit-cover.w-100(src="/img/contents/anak-design.jpeg", alt="bakso aci", width="120" height="120")
+                          .text-center
+                            span.badge.rounded-0.fw-normal.bg-info-subtle.text-info Designer
+                            h6.mt-2 Anak Design
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.flex-column.gap-5
+                  h6.fw-normal Pengumuman dari Founder Komunitas:
+        .col-3
+          include partials/side-plan

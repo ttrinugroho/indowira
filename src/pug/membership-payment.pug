@@ -1,0 +1,170 @@
+---
+title: 'Memebrship Payment'
+currentUrl: 'membership-payment'
+group: 'komunitas'
+---
+extends layouts/layout
+block header
+  include partials/header
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                +btnback('Membership')
+            .card.rounded-3.border-0
+              .card-body.p-5
+                div
+                  label.form-label(for="") Periode Berlangganan
+                .row.row-cols-4
+                  .col 
+                    .card
+                      .card-body
+                        .form-check
+                          input.form-check-input(type="radio" name="flexRadioDefault" id="1bulan")
+                          label.form-check-label(for="1bulan")
+                            h5.fw-semibold 1 Bulan 
+                            p.small.mb-0 Masa berlaku hingga 23 September 2024
+                  .col 
+                    .card
+                      .card-body
+                        .form-check
+                          input.form-check-input(type="radio" name="flexRadioDefault" id="3bulan")
+                          label.form-check-label(for="3bulan")
+                            h5.fw-semibold 3 Bulan 
+                            p.small.mb-0 Masa berlaku hingga 23 September 2024
+                  .col 
+                    .card
+                      .card-body
+                        .form-check
+                          input.form-check-input(type="radio" name="flexRadioDefault" id="6bulan")
+                          label.form-check-label(for="6bulan")
+                            h5.fw-semibold 6 Bulan 
+                            p.small.mb-0 Masa berlaku hingga 23 September 2024
+                  .col 
+                    .card
+                      .card-body
+                        .form-check
+                          input.form-check-input(type="radio" name="flexRadioDefault" id="12bulan")
+                          label.form-check-label(for="12bulan")
+                            h5.fw-semibold 12 Bulan 
+                            p.small.mb-0 Masa berlaku hingga 23 September 2024
+            .card.rounded-3.border-0
+              .card-body.p-5
+                div
+                  label.form-label(for="") Payment Method
+                ul.nav.nav-underline.tabs-side.mb-4(id="tab-komunitas" role="tablist")
+                  li.nav-item
+                    button.nav-link.active(type="button" id="transfer-tab" data-bs-toggle="tab" data-bs-target="#transfer-tab-pane" role="tab" aria-controls="transfer-tab-pane" aria-selected="true")
+                      | Transfer Bank
+                  li.nav-item
+                    button.nav-link(type="button" id="virtual-tab" data-bs-toggle="tab" data-bs-target="#virtual-tab-pane" role="tab" aria-controls="virtual-tab-pane" aria-selected="false")
+                      | Virtual Account Billing
+                  li.nav-item
+                    button.nav-link(type="button" id="qris-tab" data-bs-toggle="tab" data-bs-target="#qris-tab-pane" role="tab" aria-controls="qris-tab-pane" aria-selected="false")
+                      | QRIS
+                .tab-content#tab-payment 
+                  .tab-pane.tabs-side-slide.show.active(role="tabpanel" id='transfer-tab-pane' aria-labelledby="transfer-tab" tabindex="0")
+                    .row.row-cols-3.gy-5 
+                      each bank in ['bca','bri','mandiri','bni']
+                        .col 
+                          .card
+                            .card-body
+                              .form-check
+                                input.form-check-input(type="radio" name="bank" id=bank)
+                                label.form-check-label(for=bank)
+                                  .d-inline-flex.gap-4.align-items-center
+                                    div.ps-2(style="height: 50px;")
+                                      img.w-100.h-100.object-fit-scale(src="/img/bank/"+bank+".png", alt="bank"+bank, width="50", height="50")
+                                    span.flex-grow-1.flex-shrink-0="Bank "+ bank
+                      .col 
+                        .card
+                          .card-body
+                            .form-check
+                              input.form-check-input(type="radio" name="bank" id=bank)
+                              label.form-check-label(for=bank)
+                                .d-inline-flex.gap-4.align-items-center
+                                  div.ps-2(style="height: 50px;")
+                                    img.w-100.h-100.object-fit-scale(src="/img/bank/blu.jpeg", alt="bank blu", width="50", height="50")
+                                  span.flex-grow-1.flex-shrink-0="Bank Blu"
+                  .tab-pane.tabs-side-slide(role="tabpanel" id='virtual-tab-pane' aria-labelledby="virtual-tab" tabindex="0")
+                    .row.row-cols-3.gy-5 
+                      each bank in ['bca','bri','mandiri','bni']
+                        .col 
+                          .card
+                            .card-body
+                              .form-check
+                                input.form-check-input(type="radio" name="bank" id=bank)
+                                label.form-check-label(for=bank)
+                                  .d-inline-flex.gap-4.align-items-center
+                                    div.ps-2(style="height: 50px;")
+                                      img.w-100.h-100.object-fit-scale(src="/img/bank/"+bank+".png", alt="bank"+bank, width="50", height="50")
+                                    span.flex-grow-1.flex-shrink-0="Bank "+ bank
+                      .col 
+                        .card
+                          .card-body
+                            .form-check
+                              input.form-check-input(type="radio" name="bank" id=bank)
+                              label.form-check-label(for=bank)
+                                .d-inline-flex.gap-4.align-items-center
+                                  div.ps-2(style="height: 50px;")
+                                    img.w-100.h-100.object-fit-scale(src="/img/bank/blu.jpeg", alt="bank blu", width="50", height="50")
+                                  span.flex-grow-1.flex-shrink-0="Bank Blu"
+                  .tab-pane.tabs-side-slide(role="tabpanel" id='qris-tab-pane' aria-labelledby="qris-tab" tabindex="0")
+                    .row.row-cols-3.gy-5 
+                      each bank in ['bca','bri','mandiri','bni']
+                        .col 
+                          .card
+                            .card-body
+                              .form-check
+                                input.form-check-input(type="radio" name="bank" id=bank)
+                                label.form-check-label(for=bank)
+                                  .d-inline-flex.gap-4.align-items-center
+                                    div.ps-2(style="height: 50px;")
+                                      img.w-100.h-100.object-fit-scale(src="/img/bank/"+bank+".png", alt="bank"+bank, width="50", height="50")
+                                    span.flex-grow-1.flex-shrink-0="Bank "+ bank
+                      .col 
+                        .card
+                          .card-body
+                            .form-check
+                              input.form-check-input(type="radio" name="bank" id=bank)
+                              label.form-check-label(for=bank)
+                                .d-inline-flex.gap-4.align-items-center
+                                  div.ps-2(style="height: 50px;")
+                                    img.w-100.h-100.object-fit-scale(src="/img/bank/blu.jpeg", alt="bank blu", width="50", height="50")
+                                  span.flex-grow-1.flex-shrink-0="Bank Blu"
+            .card.rounded-3.border-0
+              .card-body.p-5
+                div 
+                  label.form-label(for="judul") Voucher
+                  .form-control.d-flex.gap-4
+                    input.form-control.border-0#judul(type="text" placeholder="Kode Voucher")
+                    .flex-grow-1.flex-shrink-0
+                      button.btn.btn-info.text-uppercase(type="button") apply voucher
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .mb-5 
+                  label.form-label(for="judul") Payment Detail
+                  .card.rounded-3
+                    .card-body
+                      div 
+                        h6.small Paket Berkarya 
+                        p.d-flex.mb-2
+                          small.me-auto 1 Bulan 
+                          small.ms-auto Rp. 10.000
+                        p.d-flex.mb-2
+                          small.me-auto Voucher
+                          small.ms-auto -
+                        hr
+                        h6.fw-semibold.d-flex
+                          span Total Pembayaran 
+                          span.ms-auto Rp. 10.000
+                .text-end 
+                  button.btn.btn-primary.text-uppercase(type="button") bayar sekarang
+block footer 
+  include partials/footer

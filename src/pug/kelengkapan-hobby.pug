@@ -1,0 +1,44 @@
+---
+title: 'Kelengkapan Profil Member Komunitas'
+currentUrl: 'kelengkapan-hobby'
+group: 'komunitas'
+---
+extends layouts/layout
+block header
+  include partials/header
+block footer 
+  include partials/footer
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                +btnback(title)
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                .text-center
+                  h6.small.mb-0 KATEGORI HOBBY, ASOSIASI/PERKUMPULAN PROFIT & NON PROFIT 
+
+            .card.rounded-3.border-0
+              .card-body.p-5 
+                .d-flex.flex-column.gap-5 
+                  .text-end 
+                    button.btn.btn-secondary(type="button") Cancel 
+                    button.btn.btn-primary.ms-3(type="button") Simpan
+                  hr.my-0
+                  div 
+                    label.form-label.small(for="pekerjaan") Pekerjaan
+                    select#pekerjaan.select.wide(name="pekerjaan")
+                      option(value="") Pilih Pekerjaan
+                      option(value="1") Karyawan Swasta
+                      option(value="2") Karyawan
+                      option(value="3") Wiraswasta
+                      option(value="4") Wirausaha/bisnis
+                      option(value="5") Hoby
+                      option(value="6") Asosiasi/perkumpulan profit
+                      option(value="7") Asosiasi/perkumpulan non profit

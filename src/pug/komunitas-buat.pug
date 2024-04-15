@@ -1,0 +1,187 @@
+---
+title: 'Buat Komunitas'
+currentUrl: 'komunitas-buat'
+group: 'komunitas'
+---
+extends layouts/layout
+block header
+  include partials/header
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                +btnback('Buat Komunitas')
+            .card.rounded-3.border-0
+              .card-body.p-5 
+                .d-flex.flex-column.gap-5 
+                  .text-end 
+                    button.btn.btn-secondary(type="button") Cancel 
+                    button.btn.btn-primary.ms-3(type="button") Simpan
+                  .row.row-cols-2.gy-4
+                    .col-12 
+                      div 
+                        label.form-label.small(for="logo") Logo Komunitas
+                        .d-flex.gap-4.text-secondary.align-items-center
+                          label.input-logo.p-5.rounded-3(for="logo")
+                            i.bi.bi-card-image.fs-4 
+                            .small 
+                              i.bi.bi-plus 
+                              span Add image
+                          div 
+                            span.badge.text-secondary Maks 1,5 Mb
+                          input.form-control.d-none#logo(type="file", name="logo")
+                    .col 
+                      div 
+                        label.form-label.small(for="nama-komunitas") Nama Komunitas
+                        input.form-control#nama-komunitas(type="text" placeholder="Tulis Nama Komunitas")
+                    .col 
+                      div 
+                        label.form-label.small(for="founder") Founder
+                        input.form-control#founder(type="text" placeholder="Nama Founder")
+                    .col 
+                      div 
+                        label.form-label.small(for="tgl-berdiri") Berdiri
+                        input.form-control#tgl-berdiri(type="date")
+                    .col 
+                      div 
+                        label.form-label.small(for="website") Webiste
+                        input.form-control#website(type="text" placeholder="Webiste Komunitas")
+                    .col-12 
+                      div
+                        label.form-label.small(for="") Media Sosial
+                      .row.row-cols-2.gy-3
+                        .col 
+                          .position-relative
+                            input.form-control.px-6(type="text" placeholder="Link facebook")
+                            .position-absolute.top-0.ps-3.py-2
+                              i.bi.bi-facebook
+                        .col 
+                          .position-relative
+                            input.form-control.px-6(type="text" placeholder="Link instagram")
+                            .position-absolute.top-0.ps-3.py-2
+                              i.bi.bi-instagram
+                        .col 
+                          .position-relative
+                            input.form-control.px-6(type="text" placeholder="Link tiktok")
+                            .position-absolute.top-0.ps-3.py-2
+                              i.bi.bi-tiktok
+                        .col 
+                          .position-relative
+                            input.form-control.px-6(type="text" placeholder="Link youtube")
+                            .position-absolute.top-0.ps-3.py-2
+                              i.bi.bi-youtube
+                        .col 
+                          .position-relative
+                            input.form-control.px-6(type="text" placeholder="Link telegram")
+                            .position-absolute.top-0.ps-3.py-2
+                              i.bi.bi-telegram
+                        .col 
+                          .position-relative
+                            input.form-control.px-6(type="text" placeholder="Link linkedin")
+                            .position-absolute.top-0.ps-3.py-2
+                              i.bi.bi-linkedin
+                    .col-12
+                      div
+                        label.form-label.small(for="") Kontak
+                      .row.row-cols-2.gy-3
+                        .col 
+                          .position-relative
+                            input.form-control.px-6(type="text" placeholder="Email komunitas")
+                            .position-absolute.top-0.ps-3.py-2
+                              i.bi.bi-envelope 
+                        .col 
+                          .position-relative
+                            input.form-control.px-6(type="text" placeholder="Link whatsapp")
+                            .position-absolute.top-0.ps-3.py-2
+                              i.bi.bi-whatsapp
+                    .col 
+                      div 
+                        label.form-label.small(for="") Legalitas
+                        select#kelurahan.select.wide(name="kelurahan")
+                          option(value="") Pilih Legalitas Komunitas
+                          option(value="1") Yayasan
+                          option(value="2") PT. (Perusahaan)
+                          option(value="3") Perkumpulan
+                    .col 
+                      div 
+                        label.form-label.small(for="") Nomor Akta pendirian / perubahan yg terbaru
+                        input.form-control#website(type="text" placeholder="Nomor Akta pendirian / perubahan yg terbaru")
+                    .col-12
+                      label.form-label.small(for="") Rekening Komunitas
+                      .row.row-cols-3 
+                        .col 
+                          div
+                            input.form-control#rekening(type="text" placeholder="Nama Rekening")
+                        .col 
+                          div 
+                            select#bank.select.wide(name="bank")
+                              option(value="") Nama Bank
+                              option(value="1") BRI
+                              option(value="2") Mandiri
+                              option(value="3") BCA
+                        .col 
+                          div 
+                            input.form-control#rekening(type="text" placeholder="Nomor Rekening")
+                    .col 
+                      div 
+                        label.form-label.small(for="membership") Membership
+                        select#membership.select.wide(name="membership")
+                          option(value="") Free
+                          option(value="1") Berbayar
+                    .col 
+                      div 
+                        label.form-label.small(for="biaya") Biaya Membership
+                        input.form-control#biaya(type="text" placeholder="Biaya Membership")
+                    .col 
+                      div 
+                        label.form-label.small(for="jenis-komunitas") Jenis Komunitas
+                        select#jenis-komunitas.select.wide(name="jenis-komunitas")
+                          option(value="") Pilih Jenis
+                          option(value="1") Terbuka
+                          option(value="2") Tertutup
+                    .col 
+                      div 
+                        label.form-label.small(for="kategori-komunitas") Kategori Komunitas
+                        select#kategori-komunitas.select.wide(name="kategori-komunitas")
+                          option(value="") Pilih Kategori
+                          option(value="1") Sekolah/kampus/alumni
+                          option(value="2") Perumahan
+                          option(value="3") Keluarga
+                          option(value="4") Wirausaha/bisnis
+                          option(value="5") Hoby
+                          option(value="6") Asosiasi/perkumpulan profit
+                          option(value="7") Asosiasi/perkumpulan non profit
+                    .col-12
+                      div 
+                        label.form-label.small(for="admin-komunitas") Admin Komunitas
+                        select#admin-komunitas.select.wide(name="admin-komunitas")
+                          option(value="") Pilih admin
+                          option(value="1") Saya
+                    .col-12 
+                      div 
+                        label.form-label.small(for="aturan") Aturan Komunitas
+                        textarea.form-control#aturan(rows="3" placeholder="Tuliskan aturan komunitas ini")
+                    .col-12 
+                      div 
+                        label.form-label.small(for="tagline") Tagline Komunitas (max 30 karakter)
+                        input.form-control#tagline(type="text" placeholder="Tagline Komunitas")
+                    .col-12
+                      div
+                        label.form-label.small(for="deskripsi") Deskripsi
+                        textarea.form-control#deskripsi(rows="3" placeholder="Tuliskan detail tentang komunitas ini")
+                    .col-12
+                      div
+                        label.form-label.small(for="visi") Visi
+                        textarea.form-control#visi(rows="3" placeholder="Tuliskan visi komunitas ini")
+                    .col-12
+                      div
+                        label.form-label.small(for="misi") Misi
+                        textarea.form-control#misi(rows="3" placeholder="Tuliskan misi komunitas ini")
+block footer
+  include partials/footer
