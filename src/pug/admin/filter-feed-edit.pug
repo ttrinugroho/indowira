@@ -1,0 +1,42 @@
+---
+title: 'Edit Kategori Postingan yang Dilarang'
+currentUrl: 'feed'
+---
+extends ../layouts/layout
+block header
+  include ../partials/header
+block footer
+  include ../partials/footer
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include ../partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                +btnback(title)
+            .card.rounded-3.border-0
+              .card-body.p-5 
+                .d-flex.flex-column.gap-5 
+                  .text-end 
+                    button.btn.btn-secondary(type="button") Cancel 
+                    button.btn.btn-primary.ms-3(type="button") Simpan
+                  hr.my-0
+                  .d-flex.justify-content-between.align-items-center
+                    h6.mb-0 List Kata Yang Dilarang
+                    div
+                      button(type="button").btn.text-primary
+                        i.bi.bi-plus-square-fill
+                  each form in [1,2,3]
+                    .row.align-items-center
+                      .col 
+                        div 
+                          label.form-label.small(for="") Kata
+                          input.form-control#kata(type="text" placeholder="Tulis kata")
+                      .col-auto 
+                        div
+                          button(type="button").btn.text-primary
+                            i.bi.bi-trash

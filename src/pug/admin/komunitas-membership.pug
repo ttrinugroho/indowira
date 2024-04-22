@@ -1,0 +1,138 @@
+---
+title: 'Master Membership Komunitas'
+currentUrl: 'komunitas'
+---
+extends ../layouts/layout
+block header
+  include ../partials/header
+block footer
+  include ../partials/footer
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include ../partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                .d-flex.gap-4.align-items-center
+                  div
+                    a.btn.text-primary(type="button" href="/")
+                      i.bi.bi-arrow-left
+                      span.ms-4 Kembali
+                  .text-center.mx-auto
+                    h5.mb-0.fw-normal=title 
+                  div 
+                    button.btn.btn-outline-primary.text-uppercase(type="button") lihat preview
+
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.flex-column.gap-5
+                  .d-flex.justify-content-between.align-items-center
+                    p.small.mb-0 Kategori 
+                    div 
+                      button.btn.btn-primary.text-uppercase(type="button")
+                        i.bi.bi-plus 
+                        span tambah kategori
+                  div 
+                    table.table.small
+                      thead.text-uppercase.table-secondary  
+                        tr.text-center.align-middle.fw-medium
+                          td NAMA Kategori
+                          td harga 
+                          td satuan 
+                          td membership 
+                          td tindakan
+                      tbody
+                        each kom,index in ['Berkomunitas', 'Berkarya','Berkarya']
+                          tr.text-center.align-middle
+                            td Berani Berkomnitas
+                            td=['-','Rp. 50.000','Rp. 20.000'][index]
+                            td Per-Member 
+                            td=index === 0 ? 'Free': 'Berbayar'
+                            td
+                              .dropdown
+                                  a.btn.btn-sm(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.bi.bi-three-dots-vertical
+                                  ul.dropdown-menu.dropdown-menu-end.rounded-0.p-0
+                                    li.border-bottom
+                                      button.dropdown-item.py-4(type="button" data-bs-toggle="modal" data-bs-target="#modal-detail-kategori")
+                                        i.bi.bi-eye
+                                        span.ms-2 Detail
+                                    li.border-bottom
+                                      a.dropdown-item.py-4(href='#')
+                                        i.bi.bi-pencil
+                                        span.ms-2 Edit
+                                    li.border-bottom
+                                      a.dropdown-item.py-4(href='#')
+                                        i.bi.bi-trash
+                                        span.ms-2 Hapus
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.flex-column.gap-5
+                  .d-flex.justify-content-between.align-items-center
+                    p.small.mb-0 Fitur 
+                    div 
+                      button.btn.btn-primary.text-uppercase(type="button")
+                        i.bi.bi-plus 
+                        span tambah Fitur
+                  div
+                    table.table.small
+                      thead.text-uppercase.table-secondary  
+                        tr.text-center.align-middle.fw-medium
+                          td NAMA Kategori fitur
+                          td tindakan 
+                      tbody
+                        each fit in ['Gabung Komunitas Lain', 'Melihat Directory','Update Feed', 'Membuat Komunitas','Membuat Grup']
+                          tr.text-center.align-middle
+                            td=fit
+                            td  
+                              .dropdown
+                                  a.btn.btn-sm(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.bi.bi-three-dots-vertical
+                                  ul.dropdown-menu.dropdown-menu-end.rounded-0.p-0
+                                    li.border-bottom
+                                      a.dropdown-item.py-4(href='#')
+                                        i.bi.bi-pencil
+                                        span.ms-2 Edit
+                                    li.border-bottom
+                                      a.dropdown-item.py-4(href='#')
+                                        i.bi.bi-trash
+                                        span.ms-2 Hapus
+block modal
+  +modal('modal-detail-kategori')
+    .modal-header.pt-5.px-5(style="--bs-modal-header-border-width: 0;")
+      h5.modal-title Detail Kategori Membership
+      button.btn-close(type="button" data-bs-dismiss="modal" aria-label="Close")
+    .px-5
+      hr
+    .modal-body.px-5.pb-5.pt-0
+      .row.row-cols-2.gy-2 
+        .col-12
+          label.form-label.fw-medium(for="") Nama Kategori
+          p.text-secondary Berani Berkarya 
+        .col
+          label.form-label.fw-medium(for="") Harga
+          p.text-secondary Rp 100.000 
+        .col
+          label.form-label.fw-medium(for="") Satuan
+          p.text-secondary per-member
+        .col-12
+          label.form-label.fw-medium(for="") Membership
+          p.text-secondary Berbayar
+        .col-12 
+          hr
+        .col-12 
+          table.table.table-striped 
+            tbody.text-center.align-middle
+              tr.table-secondary  
+                th NAMA KATEGORI FITUR
+              each fit in ['Gabung Komunitas Lain', 'Melihat Directori', 'Update Feed', 'Membuat Komunitas', 'Membuat Group']
+                tr 
+                  td=fit
+        .col-12 
+          .text-end.mt-4
+            button.btn.btn-outline-primary.text-uppercase(type="button") Edit
+

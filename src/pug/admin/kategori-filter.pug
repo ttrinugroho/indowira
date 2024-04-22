@@ -1,0 +1,35 @@
+---
+title: 'Kategori Komunitas yang Dilarang'
+currentUrl: 'komunitas'
+---
+extends ../layouts/layout
+block header
+  include ../partials/header
+block footer
+  include ../partials/footer
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include ../partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                +btnback(title)
+            .card.rounded-3.border-0
+              .card-body.p-5 
+                .d-flex.justify-content-between.align-items-center
+                  p.small Daftar KATA yang DILARANG dalam komunitas :
+                  div 
+                    button.btn.btn-primary.text-uppercase(type="button") edit
+                .mt-6 
+                  table.table.table-striped
+                    tbody.text-center
+                      tr 
+                        td KATA YANG DILARANG
+                      each texts in ['Porno','Sex','Anis','Ganjar','Prabowo','Politik']
+                        tr 
+                          td=texts 
+                      

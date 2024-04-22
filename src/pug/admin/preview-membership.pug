@@ -1,31 +1,21 @@
 ---
-title: 'membership-berbayar'
-currentUrl: 'membership-berbayar'
-group: 'komunitas'
+title: 'Preview Membership'
+currentUrl: 'komunitas'
 ---
-extends layouts/layout
+extends ../layouts/layout
 block header
-  include partials/header
+  include ../partials/header
 block content
   main.content.container-fluid
     .mx-lg-7.py-5
       .row.g-4
         .col-3
-          include partials/side-profile
+          include ../partials/side-profile
         .col-9 
           .d-flex.flex-column.gap-4 
             .card.rounded-3.border-0
               .card-body.px-5.py-4
-                .text-center 
-                  h5.mb-0 Membership
-            .card.rounded-3.border-0
-              .card-body.p-5
-                .d-flex.gap-4.align-items-center
-                  p.mb-0.text-info Komunitasmu ada iuran anggota, maka CREATE KOMUNITAS dengan type plan yang sesuai kebutuhan komunitasmu.
-                  .flex-grow-1.flex-shrink-0
-                    button.btn.btn-warning.text-white(type="button")
-                      span.me-4 Upgrap Plan Sekarang
-                      i.bi.bi-star-fill
+                +btnback(title)
             ul.nav.nav-fill.tabs-komunitas.nav-underline.border(id="tab-komunitas" role="tablist")
               li.nav-item
                 button.nav-link.text-uppercase.active(type="button" id="free-tab" data-bs-toggle="tab" data-bs-target="#free-tab-pane" role="tab" aria-controls="home-tab-pane" aria-selected="true")
@@ -122,7 +112,7 @@ block content
                             span.bi.bi-x-circle.text-secondary
                             small.ms-2 Kelola Mentoring
                         .d-grid 
-                          button.btn.btn-primary.text-uppercase(type="button") upgrade
+                          button.btn.btn-secondary.text-uppercase(type="button") upgrade
                   .col 
                     .card 
                       .card-body.p-5
@@ -181,7 +171,7 @@ block content
                             span.bi.bi-x-circle.text-secondary
                             small.ms-2 Kelola Mentoring
                         .d-grid 
-                          button.btn.btn-primary.text-uppercase(type="button") upgrade
+                          button.btn.btn-secondary.text-uppercase(type="button") upgrade
                   .col 
                     .card 
                       .card-body.p-5
@@ -240,7 +230,7 @@ block content
                             span.bi.bi-x-circle.text-secondary
                             small.ms-2 Kelola Mentoring
                         .d-grid 
-                          button.btn.btn-primary.text-uppercase(type="button") upgrade
+                          button.btn.btn-secondary.text-uppercase(type="button") upgrade
                   .col 
                     .card 
                       .card-body.p-5
@@ -299,6 +289,6 @@ block content
                             span.bi.bi-check-circle.text-success
                             small.ms-2 Kelola Mentoring
                         .d-grid 
-                          button.btn.btn-primary.text-uppercase(type="button") upgrade
+                          button.btn.btn-secondary.text-uppercase(type="button") upgrade
 block footer 
-  include partials/footer
+  include ../partials/footer

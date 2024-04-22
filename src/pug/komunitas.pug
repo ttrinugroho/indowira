@@ -41,8 +41,33 @@ block content
             .card.rounded-3.border-0
               .card-body.p-5
                 h6 Komunitas yang Anda ikuti 
-                .border 
-                  h2 Carousel 
+                .my-5
+                  .row.row-cols-5 
+                    each ca in [1,2]
+                      .col 
+                        .card
+                          .card-body
+                            .mb-4
+                              img.rounded-2.object-fit-cover.w-100(src="/img/contents/asik-masak.jpeg", alt="bakso aci", width="120" height="120")
+                            .text-center
+                              span.badge.rounded-0.fw-normal.bg-info-subtle.text-info FnB
+                              h6.mt-2 Asik Masak
+                      .col 
+                        .card
+                          .card-body
+                            .mb-4
+                              img.rounded-2.object-fit-cover.w-100(src="/img/contents/bibit-go.jpeg", alt="bakso aci", width="120" height="120")
+                            .text-center
+                              span.badge.rounded-0.fw-normal.bg-info-subtle.text-info Tanaman
+                              h6.mt-2 Bibit Go
+                    .col 
+                      .card
+                        .card-body
+                          .mb-4
+                            img.rounded-2.object-fit-cover.w-100(src="/img/contents/anak-design.jpeg", alt="bakso aci", width="120" height="120")
+                          .text-center
+                            span.badge.rounded-0.fw-normal.bg-info-subtle.text-info Designer
+                            h6.mt-2 Anak Design
             .card.rounded-3.border-0
               .card-body.p-5
                 .d-flex.flex-column.gap-5
@@ -153,18 +178,18 @@ block content
                   div 
                     table.table.small
                       thead
-                        tr.table-info
-                          th.text-center.py-4.text-uppercase(scope='col') nama komunitas
-                          th.text-center.py-4.text-uppercase(scope='col') tanggal pendirian
-                          th.text-center.py-4.text-uppercase(scope='col') deskripsi 
-                          th.text-center.py-4.text-uppercase(scope='col') tindakan
+                        tr.table-info.text-uppercase.text-center
+                          th.py-4(scope='col') nama komunitas
+                          th.py-4(scope='col') tanggal pendirian
+                          th.py-4(scope='col') deskripsi 
+                          th.py-4(scope='col') tindakan
                       tbody.align-middle
                         each tb in [1,2,3,4,5,6,7]
-                          tr
-                            td.text-center Perizinan
-                            td.text-center 24 Januari 2022
-                            td.text-center Komunitas sekolah perizinan angkatan 2
-                            td.text-center
+                          tr.text-center.align-middle
+                            td Perizinan
+                            td 24 Januari 2022
+                            td Komunitas sekolah perizinan angkatan 2
+                            td
                               .dropdown
                                 a.btn.btn-sm(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
                                   i.bi.bi-three-dots-vertical
