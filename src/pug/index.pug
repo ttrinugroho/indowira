@@ -4,6 +4,153 @@ currentUrl: feed
 ---
 extends layouts/layout
 block content
-  main.content.container-fluid
-    each link in ['feed','komunitas','pengurus','directory','komunitas-detail','member-detail']
-      a.btn.btn-link(href="/"+link+".html")=link
+  main.container-fluid
+    .d-flex.flex-column.gap-5.p-5
+      div
+        .bg-info-subtle.px-2.pt-4.pb-2.mb-3.rounded
+          h3 User
+        .row.row-cols-3
+          .col
+            .card
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold.text-uppercase feed
+                  a.list-group-item.list-group-item-action(href="/feed.html") Feed
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold.text-uppercase Komunitas
+                  a.list-group-item.list-group-item-action(href="/komunitas.html") Komunitas 
+                  a.list-group-item.list-group-item-action(href="/komunitas-detail.html") Detail Komunitas
+                  a.list-group-item.list-group-item-action(href="/komunitas-buat.html") Buat Komunitas 
+                  a.list-group-item.list-group-item-action(href="/pengurus.html") Pengurus Komunitas 
+                  a.list-group-item.list-group-item-action(href="/pengurus-tambah.html") Tambah Pengurus 
+                  a.list-group-item.list-group-item-action(href="/directory.html") Direktori 
+                  a.list-group-item.list-group-item-action(href="/member-detail.html") Detail Member 
+                  a.list-group-item.list-group-item-action(href="/pengumuman.html") Pengumuman
+                  a.list-group-item.list-group-item-action(href="/pengumuman-tambah.html") Tambah Pengumuman 
+                  a.list-group-item.list-group-item-action(href="/membership.html") Membership
+                  a.list-group-item.list-group-item-action(href="/membership-payment.html") Pembayaran Membership 
+                  a.list-group-item.list-group-item-action(href="/membership-berbayar.html") Membership Berbayar 
+          .col 
+            .card 
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold.text-uppercase Laporan
+                  a.list-group-item.list-group-item-action(href="/laporan.html") Laporan
+                  a.list-group-item.list-group-item-action(href="/laporan-pengurus.html") Laporan Pengurus, Anggota & Iuran Komunitas
+                  a.list-group-item.list-group-item-action(href="/laporan-progress.html") Laporan Progress Usaha Anggota Komunitas
+                  a.list-group-item.list-group-item-action(href="/laporan-syirkah.html") Laporan Progress Usaha Anggota Komunitas
+                  a.list-group-item.list-group-item-action(href="/laporan-usaha-detail.html") Detail Usaha Anggota Komunitas
+                  a.list-group-item.list-group-item-action(href="/laporan-progress.html") Laporan Tenaga Kerja Terserap dan Charity
+          .col
+            .card 
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold.text-uppercase Kategori Komunitas
+                  a.list-group-item.list-group-item-action(href="/kelengkapan-hobby.html") Kelengkapan Profile Komunitas 
+                  a.list-group-item.list-group-item-action(href="/komunitas-detail.html") Detail Komunitas 
+                  a.list-group-item.list-group-item-action(href="/directory.html") Direktori Member 
+                  a.list-group-item.list-group-item-action(href="/membership.html") Membership 
+                  a.list-group-item.list-group-item-action(href="/membership-payment.html") Membership Payment
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold.text-uppercase Dashboard 
+                  a.list-group-item.list-group-item-action(href="/dashboard.html") Dashboard User
+
+      div 
+        .bg-info-subtle.px-2.pt-4.pb-2.mb-3.rounded
+          h3 Mitra 
+        .row.row-cols-3
+          .col
+            .card
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold.text-uppercase Dashboard
+                  a.list-group-item.list-group-item-action(href="/dashboard-mitra.html") Dashboard Mitra
+      div 
+        .bg-info-subtle.px-2.pt-4.pb-2.mb-3.rounded
+          h3 Admin
+        .row.row-cols-3
+          .col
+            .card
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold.text-uppercase feed
+                  a.list-group-item.list-group-item-action(href="/admin") Feed
+                  a.list-group-item.list-group-item-action(href="/admin/master-feed.html") Master Feed
+                  a.list-group-item.list-group-item-action(href="/admin/filter-feed.html") Kategori Postingan yang Dilarang
+                  a.list-group-item.list-group-item-action(href="/admin/filter-feed-edit.html") Edit Kategori Postingan yang Dilarang
+                  a.list-group-item.list-group-item-action(href="/admin/violation-feed.html") Data Postingan Terlapor, Data Teguran & Data Hapus Member
+              
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold.text-uppercase pengurus komunitas
+                  a.list-group-item.list-group-item-action(href="/pengurus.html") Pengurus
+                  a.list-group-item.list-group-item-action(href="/pengurus-tambah.html") Tambah Pengurus
+                  a.list-group-item.list-group-item-action(href="/pengurus-tambah.html") Edit Pengurus
+              
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold.text-uppercase directori member
+                  a.list-group-item.list-group-item-action(href="/directory.html") Direktori Member
+                  a.list-group-item.list-group-item-action(href="/member-detail.html") Detail Member
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold.text-uppercase Pengumuman
+                  a.list-group-item.list-group-item-action(href="/pengumuman.html") Pengumuman 
+                  a.list-group-item.list-group-item-action(href="/pengumuman-tambah.html") Tambah Pengumuman
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold.text-uppercase Membership
+                  a.list-group-item.list-group-item-action(href="/membership-berbayar.html") Membership
+                  a.list-group-item.list-group-item-action(href="/admin/preview-membership.html") Membership
+                  
+          .col
+            .card
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold.text-uppercase master komunitas
+                  a.list-group-item.list-group-item-action(href="/admin/master-komunitas.html") Master Komunitas
+                  a.list-group-item.list-group-item-action(href="/admin/kategori-komunitas.html") Master Kategori Komunitas 
+                  a.list-group-item.list-group-item-action(href="/admin/kategori-komunitas-edit.html") Edit Kategori Komunitas
+                  a.list-group-item.list-group-item-action(href="/admin/komunitas-membership.html") Membership Komunitas
+                  a.list-group-item.list-group-item-action(href="/admin/kategori-tambah.html") Tambah Kategori
+                  a.list-group-item.list-group-item-action(href="/admin/kategori-tambah.html") Edit Kategori
+                  a.list-group-item.list-group-item-action(href="/admin/fitur-tambah.html") Tambah Fitur
+                  a.list-group-item.list-group-item-action(href="/admin/fitur-tambah.html") Edit Fitur
+                  a.list-group-item.list-group-item-action(href="/admin/preview-membership.html") Preview Membership
+                  a.list-group-item.list-group-item-action(href="/admin/kategori-filter.html") Kategori Komunitas yang Dilarang
+                  a.list-group-item.list-group-item-action(href="/admin/kategori-komunitas-edit.html") Edit Kategori Komunitas yang Dilarang
+                  a.list-group-item.list-group-item-action(href="/admin/violation-komunitas.html") Data Komunitas Terlapor, Data Teguran & Data Hapus Komunitas
+                  a.list-group-item.list-group-item-action(href="/admin/komunitas-detail.html") Detail Komunitas 
+              
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold KOMUNITAS
+                  a.list-group-item.list-group-item-action(href="/admin/komunitas-sub.html") Sub Komunitas
+                  a.list-group-item.list-group-item-action(href="/admin/komunitas-detail.html") Detail Komunitas 
+                  a.list-group-item.list-group-item-action(href="/komunitas-buat.html") Buat Komunitas 
+
+          .col 
+            .card 
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold.text-uppercase Laporan
+                  a.list-group-item.list-group-item-action(href="/laporan.html") Laporan
+                  a.list-group-item.list-group-item-action(href="/laporan-pengurus.html") Laporan Pengurus, Anggota & Iuran Komunitas
+                  a.list-group-item.list-group-item-action(href="/laporan-progress.html") Laporan Progress Usaha Anggota Komunitas
+                  a.list-group-item.list-group-item-action(href="/laporan-syirkah.html") Laporan Progress Usaha Anggota Komunitas
+                  a.list-group-item.list-group-item-action(href="/laporan-usaha-detail.html") Detail Usaha Anggota Komunitas
+                  a.list-group-item.list-group-item-action(href="/laporan-progress.html") Laporan Tenaga Kerja Terserap dan Charity
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold.text-uppercase Kategori Komunitas
+                  a.list-group-item.list-group-item-action(href="/kelengkapan-hobby.html") Kelengkapan Profile Komunitas 
+                  a.list-group-item.list-group-item-action(href="/komunitas-detail.html") Detail Komunitas 
+                  a.list-group-item.list-group-item-action(href="/directory.html") Direktori Member 
+                  a.list-group-item.list-group-item-action(href="/membership.html") Membership 
+                  a.list-group-item.list-group-item-action(href="/membership-payment.html") Membership Payment
+              .card-body
+                .list-group.list-group-flush
+                  .list-group-item.active.fw-semibold.text-uppercase dashboard
+                  a.list-group-item.list-group-item-action(href="/admin/dashboard.html") Admin Dashboard 

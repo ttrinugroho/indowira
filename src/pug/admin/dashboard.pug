@@ -1,0 +1,27 @@
+---
+title: 'Dashboard'
+currentUrl: 'dashboard'
+---
+extends ../layouts/layout
+block header
+  include ../partials/header
+block footer
+  include ../partials/footer
+block scripts
+  script(src="/js/chart.js")
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                .text-center 
+                  h5.mb-0=title
+            .card.rounded-3.border-0
+              .card-body.p-5 
+                #top-device
+                #performance-by-day
+        .col-3
+          include ../partials/side-plan

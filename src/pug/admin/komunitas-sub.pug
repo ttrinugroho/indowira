@@ -1,0 +1,161 @@
+---
+title: 'Komunitas'
+currentUrl: 'komunitas'
+group: 'komunitas'
+---
+extends ../layouts/layout
+block header
+  include ../partials/header
+block footer
+  include ../partials/footer
+block content
+  main.content.container-fluid
+    .mx-lg-7.py-5
+      .row.g-4
+        .col-3
+          include ../partials/side-profile
+        .col-9 
+          .d-flex.flex-column.gap-4 
+            .card.rounded-3.border-0
+              .card-body.px-5.py-4
+                .text-center 
+                  h5.mb-0 Komunitas
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .row.gy-5
+                  .col-12
+                    label(for="") Filter Pencarian
+                  .col-6
+                    div 
+                      input#search.form-control(type="text", name="seacrh", placeholder="search for community")
+                  .col-6 
+                    div
+                      select#kategori.select.wide(name="kategori")
+                        option(value="") Pilih Kategori
+                        option(value="1") Sekolah/kampus/alumni
+                        option(value="2") Perumahan
+                        option(value="3") Keluarga
+                        option(value="4") Wirausaha/bisnis
+                        option(value="5") Hoby
+                        option(value="6") Asosiasi/perkumpulan profit
+                        option(value="7") Asosiasi/perkumpulan non profit
+                  .col 
+                    div 
+                      select#provinsi.select.wide(name="provinsi")
+                        option(value="") Pilih Provinsi
+                        option(value="1") DKI JAKARTA
+                        option(value="2") JAWA BARAT
+                        option(value="3") JAWA TIMUR
+                        option(value="4") JAWA TENGAH
+                        option(value="5") KALIMANTAN SELATAN
+                        option(value="6") KALIMANTAN TIMUR
+                        option(value="7") SULAWESI
+                  .col 
+                    div 
+                      select#kota.select.wide(name="kota")
+                        option(value="") Kota/Kabupaten
+                        option(value="1") Jakarta Selatan
+                        option(value="2") Jakarta Timur
+                        option(value="3") Jakarta Barat
+                        option(value="4") Jakarta Pusat
+                  .col 
+                    div 
+                      select#kecamatan.select.wide(name="kecamatan")
+                        option(value="") Kecamatan
+                        option(value="1") Jakarta Selatan
+                        option(value="2") Jakarta Timur
+                        option(value="3") Jakarta Barat
+                        option(value="4") Jakarta Pusat
+                  .col 
+                    div 
+                      select#kelurahan.select.wide(name="kelurahan")
+                        option(value="") Kelurahan
+                        option(value="1") Jakarta Selatan
+                        option(value="2") Jakarta Timur
+                        option(value="3") Jakarta Barat
+                        option(value="4") Jakarta Pusat
+                  .col-auto
+                    div 
+                      button.btn.btn-primary.text-uppercase(type="button") cari
+            .card.rounded-3.border-0
+              .card-body.p-5
+                .d-flex.flex-column.gap-5
+                  .d-flex.align-items-center.justify-content-between 
+                    ul.nav.nav-underline.text-uppercase.tabs-side(style="--bs-nav-link-padding-y: 0;")
+                      li.nav-item
+                        a.nav-link.active(id="first-tab" data-bs-toggle="tab" href="#first-tab-pane" role="tab" aria-controls="home-tab-pane" aria-selected="true") Indowira
+                      li.nav-item
+                        a.nav-link(id="second-tab" data-bs-toggle="tab" href="#second-tab-pane" role="tab" aria-controls="home-tab-pane" aria-selected="true") sub komunitas
+                    div 
+                      button.btn.btn-primary.text-uppercase(type="button")
+                        i.bi.bi-plus
+                        span tambah sub komunitas
+                  .tab-content#tab-komunitas-content
+                    .tab-pane.tabs-side-slide(role="tabpanel" class='show active' id='first-tab-pane' aria-labelledby="first-tab" tabindex="0")
+                      table.table 
+                        thead.text-uppercase.table-info
+                          tr.small.fw-medium.text-center
+                            td nama sub komunitas
+                            td membership
+                            td jumlah member
+                            td status
+                            td tindakan
+                        tbody.small.text-center.align-middle
+                          each subs in [['Free','aman'],['Free','aman'],['Berbayar','dilaporkan'],['Free','aman'],['Berbayar','dilaporkan'],['Free','aman'],['Free','aman'],]
+                            tr
+                              td Purple Glue
+                              td=subs[0]
+                              td 231
+                              td.text-uppercase
+                                span.py-2.px-3(class=(subs[1] === 'aman' ? 'bg-success-subtle text-success':'bg-danger-subtle text-danger'))=subs[1]
+                              td 
+                                .dropdown
+                                  a.btn.btn-sm(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.bi.bi-three-dots-vertical
+                                  ul.dropdown-menu.dropdown-menu-end.rounded-0.p-0
+                                    li.border-bottom
+                                      a.dropdown-item.py-4(href='/komunitas-detail.html')
+                                        i.bi.bi-eye
+                                        span.ms-2 Lihat Detail
+                                    li.border-bottom
+                                      a.dropdown-item.py-4(href='#')
+                                        i.bi.bi-pencil
+                                        span.ms-2 Edit
+                                    li.border-bottom
+                                      a.dropdown-item.py-4(href='#')
+                                        i.bi.bi-trash
+                                        span.ms-2 Hapus
+                    .tab-pane.tabs-side-slide(role="tabpanel" id='second-tab-pane' aria-labelledby="second-tab" tabindex="0")
+                      table.table 
+                        thead.text-uppercase.table-info
+                          tr.small.fw-medium.text-center
+                            td nama sub komunitas
+                            td membership
+                            td jumlah member
+                            td status
+                            td tindakan
+                        tbody.small.text-center.align-middle
+                          each subs in [['Free','aman']]
+                            tr
+                              td Purple Glue
+                              td=subs[0]
+                              td 231
+                              td.text-uppercase
+                                span.py-2.px-3(class=(subs[1] === 'aman' ? 'bg-success-subtle text-success':'bg-danger-subtle text-danger'))=subs[1]
+                              td 
+                                .dropdown
+                                  a.btn.btn-sm(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+                                    i.bi.bi-three-dots-vertical
+                                  ul.dropdown-menu.dropdown-menu-end.rounded-0.p-0
+                                    li.border-bottom
+                                      a.dropdown-item.py-4(href='/komunitas-detail.html')
+                                        i.bi.bi-eye
+                                        span.ms-2 Lihat Detail
+                                    li.border-bottom
+                                      a.dropdown-item.py-4(href='#')
+                                        i.bi.bi-pencil
+                                        span.ms-2 Edit
+                                    li.border-bottom
+                                      a.dropdown-item.py-4(href='#')
+                                        i.bi.bi-trash
+                                        span.ms-2 Hapus
